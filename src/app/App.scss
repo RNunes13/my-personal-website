@@ -1,7 +1,17 @@
 
 @import '../assets/scss/settings/_config-base';
 
-.my-app {
-  @include flex-centered;
+.rn-app {
   height: 100%;
+
+  &__content {
+    @include flex-centered;
+    margin-left: $sidebar-width;
+    height: 100%;
+    transition: margin $transition-duration $accelerate-ease;
+
+    @include mq('lg', max) {
+      margin-left: 0;
+    }
+  }
 }

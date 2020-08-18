@@ -1,0 +1,49 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-header {
+  @include flex-centered;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background-color: darken($color-black-russian, 2%);
+  transition: transform $transition-duration $accelerate-ease;
+  z-index: z('header');
+
+  @include mq('lg', min) {
+    transform: translateY(-100%);
+  }
+
+  &__container {
+    @include rem(padding, 10px 20px);
+    @include flex-spaced;
+  }
+
+  .button {
+    @include reset-button;
+    outline: none !important;
+  }
+
+  .logo {
+    @include rem(max-width, 35px);
+  }
+
+  .menu,
+  .close {
+    cursor: pointer;
+    fill: #fff;
+  }
+
+  .menu {
+    @include rem(width, 25px);
+    @include rem(height, 25px);
+  }
+
+  .close {
+    @include rem(width, 18px);
+    @include rem(height, 18px);
+  }
+}

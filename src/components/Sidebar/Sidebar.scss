@@ -1,0 +1,130 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $sidebar-width;
+  max-width: 80vw;
+  color: #fff;
+  background-color: $color-black-russian;
+  transition: transform $transition-duration $accelerate-ease;
+  z-index: z('sidebar');
+  overflow-y: auto;
+
+  @include mq('lg', max) {
+    transform: translateX(-110%);
+  }
+
+  &.is--open {
+    @include mq('lg', max) {
+      transform: translateX(0);
+    }
+  }
+
+  & > div {
+    &:not(:last-child) {
+      border-bottom: 1px solid lighten($color-black-russian, 8%);
+    }
+  }
+
+  &__top {
+    @include rem(padding, 50px);
+    @include flex-centered;
+
+    .logo {
+      @include rem(max-width, 60px);
+    }
+  }
+
+  &__middle {
+    @include rem(padding, 20px 25px);
+
+    .menu {
+      &-items {
+        @include reset-list;
+      }
+
+      &-item {
+        @include rem(padding, 8px 0);
+      }
+
+      &-link {
+        @include rem(font-size, 14px);
+        @include font-weight(semi-bold);
+        @include reset-link;
+        text-transform: uppercase;
+        transition: color $transition-duration $accelerate-ease;
+
+        &:hover {
+          @extend %active-link;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include rem(padding, 20px 25px);
+
+    .contact {
+      &-items {
+        @include reset-list;
+      }
+
+      &-item {
+        @include rem(padding, 8px 0);
+        display: flex;
+        align-items: center;
+
+        svg {
+          @include rem(max-width, 22px);
+          @include rem(margin-right, 8px);
+          width: 100%;
+          fill: $color-accent;
+        }
+      }
+
+      &-link,
+      &-label {
+        @include rem(font-size, 14px);
+        transition: color $transition-duration $accelerate-ease;
+      }
+
+      &-link {
+        @include reset-link;
+
+        &:hover {
+          @extend %active-link;
+        }
+      }
+    }
+
+    .social {
+      &-items {
+        @include reset-list;
+        @include rem(margin-top, 30px);
+        display: flex;
+      }
+
+      &-item {
+        @include rem(margin-right, 8px);
+      }
+
+      &-link {
+        @include reset-link;
+
+        &:hover {
+          @extend %active-link;
+        }
+
+        svg {
+          @include rem(max-width, 30px);
+          width: 100%;
+          fill: $color-accent;
+        }
+      }
+    }
+  }
+}

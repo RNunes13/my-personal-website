@@ -1,0 +1,7 @@
+
+@import '../assets/scss/settings/_config-base';
+
+.my-app {
+  @include flex-centered;
+  height: 100%;
+}

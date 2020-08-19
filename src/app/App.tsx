@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.scss';
 
-import { Sidebar, Header } from '../components';
+import { Sidebar, Header, HomeIntroduce } from '../components';
 
 function App() {
   const [sidebarIsOpen, setSidebarIsOpen] = React.useState<boolean>(false);
@@ -10,11 +10,12 @@ function App() {
   return (
     <main className="rn-app">
       <Sidebar isOpen={ sidebarIsOpen } />
+      <Header
+        sidebarIsOpen={ sidebarIsOpen }
+        handleSidebar={ setSidebarIsOpen }
+      />
       <div className="rn-app__content">
-        <Header
-          sidebarIsOpen={ sidebarIsOpen }
-          handleSidebar={ setSidebarIsOpen }
-        />
+        <HomeIntroduce />
       </div>
     </main>
   );

@@ -1,20 +1,22 @@
 /**
  * Colors
  */
-$color-pigment-green : #18b45c;
+$color-pigment-green   : #18b45c;
 
-$color-whisper       : #eeeeee;
-$color-white-ice     : #ebeef1;
-$color-solitude      : #e2e3e5;
-$color-light-grey    : #dddddd;
-$color-grey          : #757575;
-$color-night-rider   : #313131;
-$color-ebony         : #282c34;
-$color-black-russian : #181923;
-$color-black         : #000000;
+$color-whisper         : #eeeeee;
+$color-white-ice       : #ebeef1;
+$color-solitude        : #e2e3e5;
+$color-light-grey      : #dddddd;
+$color-grey            : #757575;
+$color-night-rider     : #313131;
+$color-ebony           : #282c34;
+$color-black-russian   : #181923;
+$color-black-russian-2 : #1f202e;
+$color-black-russian-3 : #15151e;
+$color-black           : #000000;
 
-$color-primary     : $color-black-russian;
-$color-accent      : $color-pigment-green;
+$color-primary         : $color-black-russian;
+$color-accent          : $color-pigment-green;
 
 %active-link {
   color: $color-accent;

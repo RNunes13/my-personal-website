@@ -9,8 +9,10 @@
   left: 0;
   right: 0;
   color: #fff;
-  background-color: darken($color-black-russian, 2%);
-  transition: transform $transition-duration $accelerate-ease;
+  background-color: transparent;
+  transition-property: transform, background;
+  transition-duration: $transition-duration;
+  transition-timing-function: $accelerate-ease;
   z-index: z('header');
 
   @include mq('lg', min) {
@@ -22,9 +24,14 @@
     @include flex-spaced;
   }
 
+  &.fill {
+    background-color: darken($color-black-russian, 2%);
+  }
+
   .button {
     @include reset-button;
     outline: none !important;
+    display: flex;
   }
 
   .logo {
@@ -38,12 +45,12 @@
   }
 
   .menu {
-    @include rem(width, 25px);
-    @include rem(height, 25px);
+    @include rem(width, 20px);
+    @include rem(height, 20px);
   }
 
   .close {
-    @include rem(width, 18px);
-    @include rem(height, 18px);
+    @include rem(width, 14px);
+    @include rem(height, 14px);
   }
 }

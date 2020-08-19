@@ -1,6 +1,7 @@
 
 import React from 'react';
 import LogoWhite from '../../assets/images/logo-w.png';
+import classnames from 'classnames';
 import { Container } from '../index';
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
@@ -12,13 +13,25 @@ interface HeaderProps {
 }
 
 const Header: React.FunctionComponent<HeaderProps> = ({ sidebarIsOpen, handleSidebar }) => {
+  React.useEffect(() => {
+    window.document.addEventListener('scroll', onScroll);
 
+    return () => window.document.removeEventListener('scroll', onScroll);
+  }, []);
+
+  function onScroll() {
+    if (window.pageYOffset >= 100) setFill(true);
+    else setFill(false);
+  }
+  
+  const [fill, setFill] = React.useState<boolean>(false);
+  
   const menuOnClick = (evt: React.MouseEvent) => {
     handleSidebar(open => !open);
   };
 
   return (
-    <header className="rn-header">
+    <header className={classnames("rn-header", { fill })}>
       <Container className="rn-header__container">
         <a href="/">
           <img

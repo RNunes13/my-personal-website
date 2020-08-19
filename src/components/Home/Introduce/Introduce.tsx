@@ -37,7 +37,12 @@ function Introduce() {
           </p>
         </div>
         <div className="right">
-          <img className="profile" src={ ProfileImage } alt="Rodrigo Nunes" />
+          <div className="image_banner">
+            <img className="profile" src={ ProfileImage } alt="Rodrigo Nunes" />
+            <div className="circles">
+              { Array(8).fill(null).map((_, i) => <span key={ i } />) }
+            </div>
+          </div>
         </div>
       </Container>
     </div>

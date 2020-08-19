@@ -1,6 +1,12 @@
 
 @import '../../../assets/scss/settings/_config-base';
 
+@keyframes ripple {
+  0% { transform: scale(0.1); transform: scale(0.1); opacity:1; }
+  50% { transform: scale(.5); transform: scale(.5); opacity:0.5; }
+  100% { transform: scale(1); transform: scale(1); opacity:0; }
+}
+
 .rn-home__introduce {
   position: relative;
   width: 100%;
@@ -42,7 +48,7 @@
   }
 
   .left {
-    flex-basis: 40%;
+    flex-basis: 50%;
 
     @include mq('xl', max) {
       text-align: center;
@@ -73,11 +79,14 @@
       }
     }
   }
+
   .right {
+    @include flex-centered;
     flex-basis: 50%;
     text-align: center;
     
     @include mq('xl', max) {
+      @include rem(margin-bottom, 30px);
       flex-basis: 100%;
     }
 
@@ -89,20 +98,84 @@
       @include rem(padding-top, 60px);
     }
 
+    .image_banner {
+      @include rem(width, 400px);
+      @include rem(height, 400px);
+      position: relative;
+
+      @include mq('xl', max) {
+        @include rem(width, 300px);
+        @include rem(height, 300px);
+      }
+
+      @include mq('sm', max) {
+        @include rem(width, 200px);
+        @include rem(height, 200px);
+      }
+    }
+
     .profile {
-      @include rem(max-width, 400px);
       width: 100%;
+      height: 100%;
       border-radius: 50%;
       transition-property: max-width;
       transition-duration: $transition-duration;
       transition-timing-function: $transition-function;
+    }
+
+    .circles {
+      @include rem(width, 550px);
+      @include rem(height, 550px);
+      border-radius: 100%;
+      position: absolute;
+      left: 50%;
+      right: 0;
+      top: 50%;
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      z-index: -1;
 
       @include mq('xl', max) {
-        @include rem(max-width, 300px);
+        @include rem(width, 450px);
+        @include rem(height, 450px);
+      }
+
+      @include mq('md', max) {
+        @include rem(width, 400px);
+        @include rem(height, 400px);
       }
 
       @include mq('sm', max) {
-        @include rem(max-width, 200px);
+        @include rem(width, 300px);
+        @include rem(height, 300px);
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        transform: scale(0);
+        animation-name: ripple;
+        animation-duration: 4s;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        background-color: #fff;
+
+        &:nth-child(2) { animation-delay: 4.5s }
+        &:nth-child(3) { animation-delay: 4s }
+        &:nth-child(4) { animation-delay: 3.5s }
+        &:nth-child(5) { animation-delay: 3s }
+        &:nth-child(6) { animation-delay: 2.5s }
+        &:nth-child(7) { animation-delay: 2s }
+        &:nth-child(7) { animation-delay: 1.5s }
       }
     }
   }

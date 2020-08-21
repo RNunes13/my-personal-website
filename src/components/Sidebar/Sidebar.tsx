@@ -14,18 +14,17 @@ import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
 import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
 import { ReactComponent as SkypeIcon } from '../../assets/icons/skype.svg';
 
-interface SidebarProps {
-  isOpen: boolean;
+export interface SidebarLink {
+  label: string;
+  onClick(): void;
 }
 
-const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen }) => {
-  const links: { label: string }[] = [
-    { label: 'home' },
-    { label: 'about' },
-    { label: 'projects' },
-    { label: 'contact' },
-  ];
+interface SidebarProps {
+  isOpen: boolean;
+  links: SidebarLink[];
+}
 
+const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen, links }) => {
   const contacts: { label: string, icon: React.FunctionComponent, link?: string }[] = [
     { label: '+55 11 98947-7783', icon: PhoneIcon },
     { label: 'nunesrodrigo13@outlook.com', icon: MailIcon, link: 'mailto:nunesrodrigo13@outlook.com' },
@@ -55,7 +54,16 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen }) => {
           {
             links.map(link =>
               <li key={ link.label } className="menu-item">
-                <a className="menu-link" href="#">{ link.label }</a>
+                <a
+                  href="#"
+                  className="menu-link"
+                  onClick={e => {
+                    e.preventDefault();
+                    link.onClick();
+                  }}
+                >
+                  { link.label }
+                </a>
               </li>
             )
           }

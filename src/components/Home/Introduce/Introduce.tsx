@@ -33,7 +33,7 @@ function Introduce() {
             <p>I'm Rodrigo Nunes</p>
           </h1>
           <p className="short-intro rn-title">
-            A <span>web developer</span>.
+            A <span>Web Developer</span>.
           </p>
         </div>
         <div className="right">

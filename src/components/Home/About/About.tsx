@@ -23,7 +23,7 @@ import { ReactComponent as PostgreIcon } from '../../../assets/icons/postgresql.
 import { ReactComponent as MeditationIcon } from '../../../assets/icons/meditation.svg';
 import { ReactComponent as ResponsabilityIcon } from '../../../assets/icons/responsibility.svg';
 
-function About() {
+function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) {
   const age = (new Date()).getFullYear() - 1998;
 
   const socials: { title: string, icon: React.FunctionComponent, link: string }[] = [
@@ -53,7 +53,7 @@ function About() {
   ];
 
   return (
-    <div className="rn-home__about">
+    <div className="rn-home__about" ref={ elementRef }>
       <Container className="rn-home__about--container">
         <div className="about-wrap">
           <div className="infos">

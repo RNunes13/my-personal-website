@@ -58,7 +58,8 @@
         text-transform: uppercase;
         transition: color $transition-duration $accelerate-ease;
 
-        &:hover {
+        &:hover,
+        &.is--active {
           @extend %active-link;
         }
       }

@@ -11,5 +11,30 @@
     @include mq('lg', max) {
       margin-left: 0;
     }
+
+    .backTop {
+      @include reset-button;
+      @include rem(padding, 8px);
+      @include rem(height, 35px);
+      @include rem(width, 35px);
+      @include rem(border-radius, 4px);
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      outline: none !important;
+      background-color: #4f4f4f;
+      fill: $color-solitude;
+      z-index: z('backTop');
+      transition-property: opacity, visibility, transform;
+      transition-duration: $transition-duration;
+      transition-timing-function: $decelerate-ease;
+
+      &.is--hidden {
+        opacity: 0;
+        visibility: 0;
+        pointer-events: none;
+        transform: translateX(100%);
+      }
+    }
   }
 }

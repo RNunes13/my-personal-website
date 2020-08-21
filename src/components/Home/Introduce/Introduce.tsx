@@ -32,8 +32,8 @@ function Introduce() {
             <p>{ getGreetingText() },</p>
             <p>I'm Rodrigo Nunes</p>
           </h1>
-          <p className="short-intro">
-            I'm a website developer, who likes to work with creative and challenging projects that change people's lives, providing the best experiences.
+          <p className="short-intro rn-title">
+            A <span>web developer</span>.
           </p>
         </div>
         <div className="right">

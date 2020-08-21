@@ -78,6 +78,15 @@
         margin: 0;
       }
     }
+
+    .short-intro {
+      @include rem(font-size, 25px);
+
+      span {
+        @include font-weight(semi-bold);
+        color: $color-accent;
+      }
+    }
   }
 
   .right {

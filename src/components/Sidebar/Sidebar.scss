@@ -109,11 +109,13 @@
       }
 
       &-item {
-        @include rem(margin-right, 8px);
+        @include rem(margin-right, 10px);
+        display: flex;
       }
 
       &-link {
         @include reset-link;
+        display: flex;
 
         &:hover {
           @extend %active-link;

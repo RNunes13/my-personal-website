@@ -12,6 +12,7 @@ import { ReactComponent as MailIcon } from '../../assets/icons/mail.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/pin.svg';
 import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
 import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
+import { ReactComponent as SkypeIcon } from '../../assets/icons/skype.svg';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -34,6 +35,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen }) => {
   const socials: { title: string, icon: React.FunctionComponent, link: string }[] = [
     { title: 'GitHub', icon: GithubIcon, link: 'https://github.com/RNunes13' },
     { title: 'LinkedIn', icon: LinkedinIcon, link: 'https://www.linkedin.com/in/rodrigonunes13/' },
+    { title: 'Start chat', icon: SkypeIcon, link: 'skype:live:nunesrodrigo13_1?chat' },
   ]
 
   return (

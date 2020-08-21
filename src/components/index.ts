@@ -4,3 +4,4 @@ export { default as Header } from './Header/Header';
 export { default as Container } from './Container/Container';
 
 export { default as HomeIntroduce } from './Home/Introduce/Introduce';
+export { default as HomeAbout } from './Home/About/About';

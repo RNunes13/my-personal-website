@@ -1,0 +1,161 @@
+
+@import '../../../assets/scss/settings/_config-base';
+
+.rn-home__about {
+  @include rem(padding, 50px 0);
+  background-color: $color-black-russian-2;
+  color: #fff;
+
+  &--container {
+    width: auto;
+  }
+
+  .about-wrap,
+  .info-wrap {
+    @include flex-spaced;
+    flex-wrap: wrap;
+  }
+  
+  .info-wrap {
+    align-items: flex-start;
+  }
+
+  .title {
+    @include font-weight(bold);
+  }
+
+  .infos {
+    flex-basis: 70%;
+
+    @include mq('md', max) {
+      @include rem(margin-bottom, 10px);
+      flex-basis: 100%;
+    }
+  }
+
+  .basic-info {
+    @include rem(margin-bottom, 15px);
+    flex-basis: 380px;
+
+    @include mq('lg', max) {
+      flex-basis: 100%;
+    }
+
+    strong {
+      display: inline-block;
+      width: 85px;
+    }
+
+    a {
+      @include reset-link;
+      transition: color $transition-duration $transition-function;
+
+      &:hover {
+        color: $color-accent !important;
+      }
+    }
+  }
+
+  .social {
+    &-items {
+      @include reset-list;
+      @include rem(margin-top, 30px);
+      display: flex;
+    }
+
+    &-item {
+      @include rem(margin-right, 10px);
+      display: flex;
+    }
+
+    &-link {
+      @include reset-link;
+      display: flex;
+
+      &:hover {
+        @extend %active-link;
+      }
+
+      svg {
+        @include rem(max-width, 30px);
+        width: 100%;
+        fill: $color-accent;
+      }
+    }
+  }
+
+  .skills {
+    flex-grow: 1;
+
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+
+      p {
+        @include font-weight(semi-bold);
+        position: relative;
+        margin-top: 0;
+        // border-bottom: 1px solid $color-grey;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, rgba($color-solitude, 1), rgba($color-solitude, 0.1), rgba($color-solitude, 0));
+        }
+      }
+
+    }
+
+    &-development,
+    &-personal {
+      @include rem(margin-bottom, 10px);
+
+      @include mq('xs', max) {
+        flex-basis: 100%;
+      }
+    }
+
+    &-development {
+      @include rem(flex-basis, 290px);
+      @include rem(margin-right, 10px);
+    }
+
+    &-personal {
+      flex-grow: 1;
+    }
+  }
+
+  .skill {
+    &-items {
+      @include reset-list;
+      @include rem(max-height, 200px);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+
+      @include breakpoint(max-width, 350px) {
+        max-height: none;
+      }
+    }
+
+    &-item {
+      @include rem(margin-right, 10px);
+      @include rem(margin-bottom, 10px);
+      @include rem(font-size, 15px);
+      display: flex;
+      align-items: center;
+
+      svg {
+        @include rem(width, 28px);
+        @include rem(height, 28px);
+        @include rem(margin-right, 8px);
+        fill: #fff;
+      }
+    }
+  }
+}

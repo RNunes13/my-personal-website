@@ -1,0 +1,41 @@
+{
+  "sidebar": {
+    "menu": {
+      "home": "Tela Inicial",
+      "about": "Sobre"
+    },
+    "languages": {
+      "pt": "Português",
+      "en": "Inglês"
+    }
+  },
+  "greeting": {
+    "morning": "Bom dia",
+    "afternoon": "Boa tarde",
+    "night": "Boa noite",
+    "pronoun": "Sou",
+    "grammaticalClass": "Um",
+    "work": "Desenvolvedor Web"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "download": "Baixar CV",
+    "info_title": "Informações básicas",
+    "age": "Idade",
+    "phone_number": "Telefone",
+    "location": "Local",
+    "skills_title": "Minhas Skills",
+    "skills_dev": "Desenvolvimento",
+    "skills_personal": {
+      "title": "Pessoal",
+      "organization": "Organização",
+      "responsibility": "Responsabilidade",
+      "openMindedness": "Mente aberta",
+      "adaptability": "Adaptabilidade"
+    },
+    "paragraphs": {
+      "one": "Sou desenvolvedor de websites, que gosta de trabalhar com projetos criativos e desafiadores que mudem a vida das pessoas, fornecendo as melhores experiências. Como programador procuro sempre trabalhar com as melhores práticas para um código otimizado e funcional, gosto de experimentar novas tecnologias e ferramentas que possam aprimorar o desenvolvimento.",
+      "two": "No tempo livre dedico a leitura, hobbies e pesquisas sobre tecnologias emergentes, estratégias e conceitos de design, e tudo mais com o qual se pode aplicar ao desenvolvimento web."
+    }
+  }
+}

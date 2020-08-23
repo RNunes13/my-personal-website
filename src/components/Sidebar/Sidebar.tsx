@@ -2,8 +2,11 @@
 /* eslint-disable react/jsx-no-target-blank */
 
 import React from 'react';
+import i18n from '../../i18n';
 import classnames from 'classnames';
 import LogoWhite from '../../assets/images/logo-w.png';
+import { AppLanguageType } from '../../app/App';
+import { withNamespaces, WithNamespaces } from 'react-i18next';
 import './Sidebar.scss'
 
 // Icons
@@ -13,6 +16,9 @@ import { ReactComponent as LocationIcon } from '../../assets/icons/pin.svg';
 import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
 import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
 import { ReactComponent as SkypeIcon } from '../../assets/icons/skype.svg';
+import { ReactComponent as BrFlagIcon } from '../../assets/icons/brazil-flag.svg';
+import { ReactComponent as UsFlagIcon } from '../../assets/icons/usa-flag.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/icons/up-arrow.svg';
 
 export interface SidebarLink {
   label: string;
@@ -20,11 +26,27 @@ export interface SidebarLink {
 }
 
 interface SidebarProps {
+  t?: any;
   isOpen: boolean;
   links: SidebarLink[];
+  handleLanguage(lng: AppLanguageType): void;
 }
 
-const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen, links }) => {
+const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
+  t,
+  links,
+  isOpen,
+  handleLanguage,
+}) => {
+  const [languageDropdownOpen, setLanguageDropdownOpen] = React.useState<boolean>(false);
+
+  const toggleLanguageDropdown = () => setLanguageDropdownOpen(open => !open);
+
+  const changeLanguage = (lng: AppLanguageType) => {
+    toggleLanguageDropdown();
+    handleLanguage(lng);
+  };
+  
   const contacts: { label: string, icon: React.FunctionComponent, link?: string }[] = [
     { label: '+55 11 98947-7783', icon: PhoneIcon },
     { label: 'nunesrodrigo13@outlook.com', icon: MailIcon, link: 'mailto:nunesrodrigo13@outlook.com' },
@@ -35,7 +57,14 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen, links }) => {
     { title: 'GitHub', icon: GithubIcon, link: 'https://github.com/RNunes13' },
     { title: 'LinkedIn', icon: LinkedinIcon, link: 'https://www.linkedin.com/in/rodrigonunes13/' },
     { title: 'Start chat', icon: SkypeIcon, link: 'skype:live:nunesrodrigo13_1?chat' },
-  ]
+  ];
+
+  const languages: { label: string, key: string, icon: React.FunctionComponent, onClick: () => void }[] = [
+    { label: 'sidebar.languages.pt', key: 'pt', icon: BrFlagIcon, onClick: () => changeLanguage('pt') },
+    { label: 'sidebar.languages.en', key: 'en', icon: UsFlagIcon, onClick: () => changeLanguage('en') },
+  ];
+
+  const activeLanguage = (languages.filter(l => l.key === i18n.language) || [])[0];
 
   return (
     <aside className={classnames("rn-sidebar", { 'is--open': isOpen })}>
@@ -62,7 +91,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen, links }) => {
                     link.onClick();
                   }}
                 >
-                  { link.label }
+                  { t(link.label) }
                 </a>
               </li>
             )
@@ -100,9 +129,35 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ isOpen, links }) => {
             )
           }
         </ul>
+        <div className="language">
+          <span
+            onClick={ toggleLanguageDropdown }
+            className={classnames("language__active", { 'is--open': languageDropdownOpen})}
+          >
+            <span>
+              <activeLanguage.icon />
+              { t(activeLanguage.label) }
+            </span>
+            <ArrowIcon />
+          </span>
+          <div className={classnames("language__dropdown", { 'is--open': languageDropdownOpen})}>
+            <ul className="language__items">
+              {
+                languages
+                .filter(l => l.key !== activeLanguage.key)
+                .map(l =>
+                  <li key={ l.key } className="language__item" onClick={ l.onClick }>
+                    <l.icon />
+                    { t(l.label) }
+                  </li>
+                )
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     </aside>
   );
 }
 
-export default Sidebar;
+export default withNamespaces()(Sidebar);

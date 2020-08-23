@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Container from '../../Container/Container';
+import { withNamespaces, WithNamespaces } from 'react-i18next';
 import './About.scss';
 
 // Icons
@@ -23,7 +24,12 @@ import { ReactComponent as PostgreIcon } from '../../../assets/icons/postgresql.
 import { ReactComponent as MeditationIcon } from '../../../assets/icons/meditation.svg';
 import { ReactComponent as ResponsabilityIcon } from '../../../assets/icons/responsibility.svg';
 
-function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) {
+interface AboutProps extends WithNamespaces {
+  elementRef: React.RefObject<HTMLDivElement>;
+  t?: any;
+}
+
+function About({ elementRef, t }: AboutProps) {
   const age = (new Date()).getFullYear() - 1998;
 
   const socials: { title: string, icon: React.FunctionComponent, link: string }[] = [
@@ -46,10 +52,10 @@ function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) 
   ];
 
   const personalSkills: { label: string, icon: React.FunctionComponent }[] = [
-    { label: 'Organization', icon: DiagramIcon },
-    { label: 'Responsibility', icon: ResponsabilityIcon },
-    { label: 'Open-mindedness', icon: MeditationIcon },
-    { label: 'Adaptability', icon: AdaptationIcon },
+    { label: 'about.skills_personal.organization', icon: DiagramIcon },
+    { label: 'about.skills_personal.responsibility', icon: ResponsabilityIcon },
+    { label: 'about.skills_personal.openMindedness', icon: MeditationIcon },
+    { label: 'about.skills_personal.adaptability', icon: AdaptationIcon },
   ];
 
   return (
@@ -57,30 +63,23 @@ function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) 
       <Container className="rn-home__about--container">
         <div className="about-wrap">
           <div className="infos">
-            <h1 className="title rn-title">About Me</h1>
-            <p>
-              I'm a website developer, who likes to work with creative and challenging projects that change people's lives, providing the best experiences. As a programmer I always try to work with the best practices for an optimized and functional code, I like to try new technologies and tools that can improve the development.
-            </p>
-            <p>
-              In my free time I dedicate myself to reading, hobbies and research on emerging technologies, design strategies and concepts, and everything else that can be applied to web development
-            </p>
+            <h1 className="title rn-title">{ t('about.title') }</h1>
+            <p>{ t('about.paragraphs.one') }</p>
+            <p>{ t('about.paragraphs.two') }</p>
           </div>
-          <button className="rn-button rn-button__primary">Download CV</button>
+          <button className="rn-button rn-button__primary">{ t('about.download') }</button>
         </div>
         <div className="info-wrap">
           <div className="basic-info">
-            <h3 className="rn-title">Basic Info</h3>
+            <h3 className="rn-title">{ t('about.info_title') }</h3>
             <p>
-              <strong>Age: </strong> { age }
-            </p>
-            <p>
-              <strong>Phone No: </strong> +55 11 98947-7783
+              <strong>{ t('about.age') }: </strong> { age }
             </p>
             <p>
               <strong>Email: </strong> <a href="mailto:nunesrodrigo13@outlook.com">nunesrodrigo13@outlook.com</a>
             </p>
             <p>
-              <strong>Location: </strong> São Paulo, SP, Brazil
+              <strong>{ t('about.location') }: </strong> São Paulo, SP, Brazil
             </p>
             <ul className="social-items">
               {
@@ -95,10 +94,10 @@ function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) 
             </ul>
           </div>
           <div className="skills">
-            <h3 className="rn-title">My Skills</h3>
+            <h3 className="rn-title">{ t('about.skills_title') }</h3>
             <div className="skills-wrap">
               <div className="skills-development">
-                <p>Development</p>
+                <p>{ t('about.skills_dev') }</p>
                 <ul className="skill-items">
                   {
                     devSkills.map(skill =>
@@ -111,13 +110,13 @@ function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) 
                 </ul>
               </div>
               <div className="skills-personal">
-                <p>Personal</p>
+                <p>{ t('about.skills_personal.title') }</p>
                 <ul className="skill-items">
                   {
                     personalSkills.map(skill =>
                       <li key={ skill.label } className="skill-item">
                         <skill.icon />
-                        <span>{ skill.label }</span>
+                        <span>{ t(skill.label) }</span>
                       </li>  
                     )
                   }
@@ -131,4 +130,4 @@ function About({ elementRef }: { elementRef: React.RefObject<HTMLDivElement> }) 
   )
 }
 
-export default About;
+export default withNamespaces()(About);

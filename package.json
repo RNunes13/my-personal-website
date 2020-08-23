@@ -11,9 +11,12 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "classnames": "^2.2.6",
+    "i18next": "^19.7.0",
+    "i18next-browser-languagedetector": "^6.0.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^9.0.10",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
   },
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
+    "@types/react-i18next": "^8.1.0",
     "sass-rem": "^2.0.1"
   }
 }

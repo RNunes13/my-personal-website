@@ -56,7 +56,7 @@
     }
 
     .greeting {
-      @include rem(font-size, 60px);
+      @include rem(font-size, 55px);
       @include rem(margin-bottom, 10px);
       transition-property: font-size;
       transition-duration: $transition-duration;

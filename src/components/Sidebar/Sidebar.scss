@@ -129,5 +129,69 @@
         }
       }
     }
+
+    .language {
+      @include rem(padding, 30px 0);
+      @include rem(font-size, 15px);
+      @include font-weight(semi-bold);
+
+      svg {
+        @include rem(width, 20px);
+        @include rem(margin-right, 10px);
+      }
+      
+      &__active {
+        @include rem(border-radius, 4px 4px 0 0);
+        @include rem(padding, 5px 10px);
+        @include flex-spaced;
+        cursor: pointer;
+        background-color: lighten($color-black-russian, 8%);
+
+        &:not(.is--open) {
+          @include rem(border-radius, 4px);
+
+          svg.up-arrow {
+            transform: scaleY(-1);
+          }  
+        }
+
+        span {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        svg.up-arrow {
+          @include rem(width, 15px);
+          transition: transform $transition-duration $accelerate-ease;
+          fill: #fff;
+        }
+      }
+
+      &__dropdown {
+        @include rem(border-radius, 0 0 4px 4px);
+        background-color: lighten($color-black-russian, 8%);
+        transition: transform $transition-duration $accelerate-ease;
+        transform-origin: top;
+
+        &:not(.is--open) {
+          transform: scaleY(0);
+        }
+      }
+
+      &__items {
+        @include reset-list;
+      }
+
+      &__item {
+        @include rem(padding, 5px 10px);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        @include hover-supported() {
+          background-color: lighten($color-black-russian, 12%);
+        }
+      }
+    }
   }
 }

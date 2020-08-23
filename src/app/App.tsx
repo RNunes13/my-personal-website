@@ -1,6 +1,7 @@
 
 import React from 'react';
 import classnames from 'classnames';
+import i18n from '../i18n';
 import { SidebarLink } from '../components/Sidebar/Sidebar';
 import { ReactComponent as ArrowIcon } from '../assets/icons/up-arrow.svg';
 import './App.scss';
@@ -11,6 +12,8 @@ import {
   HomeAbout,
   HomeIntroduce,
 } from '../components';
+
+export type AppLanguageType = 'pt' | 'en'; 
 
 function App() {
   React.useEffect(() => {
@@ -25,9 +28,11 @@ function App() {
   const aboutRef = React.createRef<HTMLDivElement>();
 
   const sidebarLinks: SidebarLink[] = [
-    { label: 'home', onClick: () => { navigateToSession() } },
-    { label: 'about', onClick: () => { navigateToSession(aboutRef) } },
+    { label: 'sidebar.menu.home', onClick: () => { navigateToSession() } },
+    { label: 'sidebar.menu.about', onClick: () => { navigateToSession(aboutRef) } },
   ];
+
+  const changeLanguage = (lng: AppLanguageType) => i18n.changeLanguage(lng);
 
   function onScroll() {
     if (window.pageYOffset >= (window.innerHeight * 0.9)) setShowBackTop(true);
@@ -51,7 +56,7 @@ function App() {
 
   return (
     <main className="rn-app">
-      <Sidebar isOpen={ sidebarIsOpen } links={ sidebarLinks } />
+      <Sidebar isOpen={ sidebarIsOpen } links={ sidebarLinks } handleLanguage={ changeLanguage } />
       <Header
         sidebarIsOpen={ sidebarIsOpen }
         handleSidebar={ setSidebarIsOpen }

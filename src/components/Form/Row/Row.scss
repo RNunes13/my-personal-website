@@ -1,0 +1,23 @@
+
+@import '../../../assets/scss/settings/_config-base';
+
+.rn-form {
+  &__row {
+    display: flex;
+
+    @include mq('sm', max) {
+      flex-direction: column;
+    }
+
+    & > div {
+      flex-grow: 1;
+      flex-wrap: wrap;
+      
+      &:not(:last-child) {
+        @include mq('sm') {
+          @include rem(margin-right, 10px);
+        }
+      }
+    }
+  }
+}

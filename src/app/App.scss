@@ -12,6 +12,23 @@
       margin-left: 0;
     }
 
+    section {
+      @include rem(padding, 50px 0);
+      color: #fff;
+
+      &:nth-child(odd) {
+        background-color: $color-black-russian-2;
+      }
+
+      &:nth-child(even) {
+        background-color: $color-black-russian-3;
+      }
+
+      .rn-container {
+        width: auto;
+      }
+    }
+
     .backTop {
       @include reset-button;
       @include rem(padding, 8px);

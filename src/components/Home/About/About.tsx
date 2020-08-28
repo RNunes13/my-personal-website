@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 
 import React from 'react';
-import Container from '../../Container/Container';
+import { Container, Button } from '../../index';
 import { withNamespaces, WithNamespaces } from 'react-i18next';
 import './About.scss';
 
@@ -18,9 +18,10 @@ import { ReactComponent as JsIcon } from '../../../assets/icons/javascript.svg';
 import { ReactComponent as TsIcon } from '../../../assets/icons/typescript.svg';
 import { ReactComponent as DiagramIcon } from '../../../assets/icons/diagram.svg';
 import { ReactComponent as WebpackIcon } from '../../../assets/icons/webpack.svg';
-import { ReactComponent as AdaptationIcon } from '../../../assets/icons/adaptation.svg';
+import { ReactComponent as DownloadIcon } from '../../../assets/icons/download.svg';
 import { ReactComponent as LinkedinIcon } from '../../../assets/icons/linkedin.svg';
 import { ReactComponent as PostgreIcon } from '../../../assets/icons/postgresql.svg';
+import { ReactComponent as AdaptationIcon } from '../../../assets/icons/adaptation.svg';
 import { ReactComponent as MeditationIcon } from '../../../assets/icons/meditation.svg';
 import { ReactComponent as ResponsabilityIcon } from '../../../assets/icons/responsibility.svg';
 
@@ -59,7 +60,7 @@ function About({ elementRef, t }: AboutProps) {
   ];
 
   return (
-    <div className="rn-home__about" ref={ elementRef }>
+    <section className="rn-home__about" ref={ elementRef }>
       <Container className="rn-home__about--container">
         <div className="about-wrap">
           <div className="infos">
@@ -67,7 +68,10 @@ function About({ elementRef, t }: AboutProps) {
             <p>{ t('about.paragraphs.one') }</p>
             <p>{ t('about.paragraphs.two') }</p>
           </div>
-          <button className="rn-button rn-button__primary">{ t('about.download') }</button>
+          <Button type="button">
+            <DownloadIcon />
+            { t('about.download') }
+          </Button>
         </div>
         <div className="info-wrap">
           <div className="basic-info">
@@ -126,7 +130,7 @@ function About({ elementRef, t }: AboutProps) {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   )
 }
 

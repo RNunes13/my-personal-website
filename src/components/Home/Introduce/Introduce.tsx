@@ -26,7 +26,7 @@ function Introduce({ t }: any) {
   }
 
   return (
-    <div className="rn-home__introduce">
+    <section className="rn-home__introduce">
       <Container className="rn-home__introduce--container">
         <div className="left">
           <h1 className="greeting rn-title">
@@ -46,7 +46,7 @@ function Introduce({ t }: any) {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   )
 }
 

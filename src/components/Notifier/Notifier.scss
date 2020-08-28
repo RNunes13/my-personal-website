@@ -1,0 +1,119 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-notifier {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#000, 0.7);
+  z-index: z('notifier');
+  transition-property: opacity, visibility;
+  transition-duration: $transition-duration;
+  transition-timing-function: $decelerate-ease;
+
+  &:not(.is--open) {
+    opacity: 0;
+    visibility: hidden;
+
+    .rn-notifier__wrap {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__container {
+    @include flex-centered;
+    width: auto !important;
+    height: 100%;
+  }
+
+  &__wrap {
+    @include rem(max-width, 350px);
+    @include rem(border-radius, 10px);
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    transition-property: opacity, visibility, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: $decelerate-ease;
+
+    &.default {
+      svg { fill: $color-night-rider }
+      .info-title { color: $color-night-rider }
+      .action { background-color: $color-night-rider }
+    }
+
+    &.info {
+      svg { fill: $color-navy-blue }
+      .info-title { color: $color-navy-blue }
+      .action { background-color: $color-navy-blue }
+    }
+
+    &.success {
+      svg { fill: $color-fruit-salad }
+      .info-title { color: $color-fruit-salad }
+      .action { background-color: $color-fruit-salad }
+    }
+
+    &.error {
+      svg { fill: $color-persian-red }
+      .info-title { color: $color-persian-red }
+      .action { background-color: $color-persian-red }
+    }
+
+    &.warning {
+      svg { * { fill: $color-orange-peel } }
+      .info-title { color: $color-orange-peel }
+      .action { background-color: $color-orange-peel }
+    }
+  }
+  
+  .content {
+    @include rem(padding, 15px);
+    text-align: center;
+  
+    .icon {
+      @include rem(padding, 15px 0);
+      border-bottom: 1px solid $color-light-grey;
+      
+      svg {
+        @include rem(max-width, 100px);
+        @include rem(max-height, 100px);
+      }
+    }
+  
+    .info {
+      @include rem(padding, 20px);
+  
+      p { margin: 0; }
+  
+      .info {
+        &-title {
+          @include rem(margin-bottom, 5px);
+          @include font-weight(semi-bold);
+        }
+  
+        &-message {
+          @include rem(font-size, 15px);
+          color: $color-night-rider;
+        }
+      }
+    }
+  }
+
+  .action {
+    button {
+      @include reset-button;
+      @include rem(padding, 10px);
+      @include rem(letter-spacing, 1px);
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+      outline: none !important;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}

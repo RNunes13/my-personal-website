@@ -2,7 +2,8 @@
   "sidebar": {
     "menu": {
       "home": "Tela Inicial",
-      "about": "Sobre"
+      "about": "Sobre",
+      "contact": "Contato"
     },
     "languages": {
       "pt": "Português",
@@ -36,6 +37,50 @@
     "paragraphs": {
       "one": "Sou desenvolvedor de websites, que gosta de trabalhar com projetos criativos e desafiadores que mudem a vida das pessoas, fornecendo as melhores experiências. Como programador procuro sempre trabalhar com as melhores práticas para um código otimizado e funcional, gosto de experimentar novas tecnologias e ferramentas que possam aprimorar o desenvolvimento.",
       "two": "No tempo livre dedico a leitura, hobbies e pesquisas sobre tecnologias emergentes, estratégias e conceitos de design, e tudo mais com o qual se pode aplicar ao desenvolvimento web."
+    }
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "subtitle": "Me envie uma mensagem, responderei assim que possível.",
+    "form": {
+      "submit": {
+        "text": "Enviar mensagem",
+        "sending": "Enviando..."
+      },
+      "alerts": {
+        "success": "Sua mensagem foi enviada! Entrarei em contato em breve.",
+        "error": "Algo deu errado ao enviar sua mensagem."
+      },
+      "name": {
+        "label": "Nome",
+        "validation": {
+          "required": "Campo obrigatório",
+          "length": "Parece que o nome está muito curto"
+        }
+      },
+      "email": {
+        "label": "Email",
+        "validation": {
+          "required": "Campo obrigatório",
+          "email": "Informe um email válido"
+        }
+      },
+      "message": {
+        "label": "Mensagem",
+        "validation": {
+          "required": "Campo obrigatório"
+        }
+      }
+    }
+  },
+  "notifier": {
+    "actionText": "Continuar",
+    "variant": {
+      "info": "Info!",
+      "error": "Erro!",
+      "default": "Info!",
+      "warning": "Alerta!",
+      "success": "Sucesso!"
     }
   }
 }

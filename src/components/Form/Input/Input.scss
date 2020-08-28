@@ -1,0 +1,79 @@
+
+@import '../../../assets/scss/settings/_config-base';
+
+.rn-form {
+  &__input {
+    $input: &;
+    @include rem(padding, 13px 15px);
+    @include rem(font-size, 14px);
+    width: 100%;
+    border: none;
+    color: $color-light-grey;
+    outline: none;
+    background-color: lighten($color-black-russian, 10%);
+
+    &::placeholder {
+      color: $color-grey;
+    }
+
+    &:focus {
+      & + div {
+        height: 2px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: lighten($color-black-russian, 5%);
+      color: $color-grey;
+    }
+
+    &--textarea {
+      @include rem(min-height, 76px);
+      font-family: $font-main;
+      resize: vertical;
+    }
+
+    &[error="true"],
+    &[data-error="true"] {
+      border-color: $color-light-coral !important;
+
+      & + div {
+        background-color: $color-light-coral !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        height: 2px;
+      }
+    }
+
+    &--error {
+      @include rem(margin-top, 5px);
+      @include rem(font-size, 13px);
+      @include font-weight(semi-bold);
+      color: $color-light-coral;
+    }
+
+    &--wrapper {
+      @include rem(border-radius, 4px);
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+    &--underline {
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      background-color: $color-accent;
+      transition-property: width, opacity, visibility, background;
+      transition-duration: $transition-duration;
+      transition-timing-function: $accelerate-ease;
+    }
+  }
+}

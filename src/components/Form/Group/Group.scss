@@ -1,0 +1,8 @@
+
+@import '../../../assets/scss/settings/_config-base';
+
+.rn-form {
+  &__group {
+    @include rem(margin-bottom, 24px);
+  }
+}

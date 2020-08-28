@@ -1,0 +1,53 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-button {
+  @include reset-button;
+  @include rem(padding, 10px 20px !important);
+  @include rem(font-size, 16px !important);
+  @include rem(border-radius, 30px !important);
+  @include font-weight(semi-bold !important);
+  display: flex;
+  align-items: center;
+  text-transform: none !important;
+  outline: none !important;
+  transition-property: color, border, background;
+  transition-duration: $transition-duration;
+  transition-timing-function: $accelerate-ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: $color-grey;
+    color: $color-night-rider;
+    background-color: $color-grey;
+
+    svg {
+      fill: $color-night-rider;
+    }
+  }
+
+  svg {
+    @include rem(margin-right, 8px);
+    @include rem(width, 20px);
+    @include rem(height, 20px);
+    transition-property: fill;
+    transition-duration: $transition-duration;
+    transition-timing-function: $accelerate-ease;
+  }
+
+  &__primary {
+    @include font-weight(semi-bold);
+    border: 2px solid $color-accent;
+    background-color: $color-accent;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: #fff;
+      color: $color-accent;
+
+      svg { fill: $color-accent }
+    }
+
+    svg { fill: #fff }
+  }
+}

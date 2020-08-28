@@ -82,5 +82,8 @@
       "warning": "Warning!",
       "success": "Success!"
     }
+  },
+  "footer": {
+    "copyright": "All rights reserved"
   }
 }

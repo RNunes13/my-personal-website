@@ -14,6 +14,7 @@ import {
   HomeAbout,
   HomeContact,
   HomeIntroduce,
+  Footer,
 } from '../components';
 
 export type AppLanguageType = 'pt' | 'en';
@@ -86,6 +87,7 @@ function App() {
           <HomeIntroduce />
           <HomeAbout elementRef={ aboutRef } />
           <HomeContact elementRef={ contactRef } />
+          <Footer />
         </div>
       </main>
     </AppContext.Provider>

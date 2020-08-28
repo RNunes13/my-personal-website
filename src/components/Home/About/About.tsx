@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 
 import React from 'react';
-import { Container, Button } from '../../index';
+import { Container, Button, Social } from '../../index';
 import { withNamespaces, WithNamespaces } from 'react-i18next';
 import './About.scss';
 
@@ -10,16 +10,13 @@ import { ReactComponent as AwsIcon } from '../../../assets/icons/aws.svg';
 import { ReactComponent as CssIcon } from '../../../assets/icons/css3.svg';
 import { ReactComponent as HtmlIcon } from '../../../assets/icons/html.svg';
 import { ReactComponent as RubyIcon } from '../../../assets/icons/ruby.svg';
-import { ReactComponent as SkypeIcon } from '../../../assets/icons/skype.svg';
 import { ReactComponent as ReactIcon } from '../../../assets/icons/react.svg';
 import { ReactComponent as NodeIcon } from '../../../assets/icons/nodejs.svg';
-import { ReactComponent as GithubIcon } from '../../../assets/icons/github.svg';
 import { ReactComponent as JsIcon } from '../../../assets/icons/javascript.svg';
 import { ReactComponent as TsIcon } from '../../../assets/icons/typescript.svg';
 import { ReactComponent as DiagramIcon } from '../../../assets/icons/diagram.svg';
 import { ReactComponent as WebpackIcon } from '../../../assets/icons/webpack.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/download.svg';
-import { ReactComponent as LinkedinIcon } from '../../../assets/icons/linkedin.svg';
 import { ReactComponent as PostgreIcon } from '../../../assets/icons/postgresql.svg';
 import { ReactComponent as AdaptationIcon } from '../../../assets/icons/adaptation.svg';
 import { ReactComponent as MeditationIcon } from '../../../assets/icons/meditation.svg';
@@ -32,12 +29,6 @@ interface AboutProps extends WithNamespaces {
 
 function About({ elementRef, t }: AboutProps) {
   const age = (new Date()).getFullYear() - 1998;
-
-  const socials: { title: string, icon: React.FunctionComponent, link: string }[] = [
-    { title: 'GitHub', icon: GithubIcon, link: 'https://github.com/RNunes13' },
-    { title: 'LinkedIn', icon: LinkedinIcon, link: 'https://www.linkedin.com/in/rodrigonunes13/' },
-    { title: 'Start chat', icon: SkypeIcon, link: 'skype:live:nunesrodrigo13_1?chat' },
-  ];
 
   const devSkills: { label: string, icon: React.FunctionComponent }[] = [
     { label: 'HTML/PUGjs', icon: HtmlIcon },
@@ -85,17 +76,7 @@ function About({ elementRef, t }: AboutProps) {
             <p>
               <strong>{ t('about.location') }: </strong> São Paulo, SP, Brazil
             </p>
-            <ul className="social-items">
-              {
-                socials.map(social =>
-                  <li key={ social.title } className="social-item">
-                    <a className="social-link" href={ social.link } target="_blank" title={ social.title }>
-                      <social.icon />
-                    </a>
-                  </li>
-                )
-              }
-            </ul>
+            <Social />
           </div>
           <div className="skills">
             <h3 className="rn-title">{ t('about.skills_title') }</h3>

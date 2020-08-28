@@ -41,11 +41,13 @@
     background-color: $color-accent;
     color: #fff;
 
-    &:hover:not(:disabled) {
-      background-color: #fff;
-      color: $color-accent;
-
-      svg { fill: $color-accent }
+    @include hover-supported() {
+      &:not(:disabled) {
+        background-color: #fff;
+        color: $color-accent;
+  
+        svg { fill: $color-accent }
+      }
     }
 
     svg { fill: #fff }

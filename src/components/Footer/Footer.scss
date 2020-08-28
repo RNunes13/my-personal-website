@@ -1,0 +1,71 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-footer {
+  position: relative;
+  background: url('../../assets/images/footer.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+
+  &__container {
+    @include rem(padding-top, 30px);
+    @include rem(padding-bottom, 30px);
+    @include flex-spaced;
+    width: auto !important;
+    
+    @include breakpoint(min-width, 1200px) {
+      @include rem(max-width, 1170px);
+    }
+
+    @include mq('md', max) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($color-black-russian, 0.85);
+    }
+  }
+
+  .left,
+  .middle,
+  .right {
+    @include flex-centered;
+    z-index: 1;
+    flex: 1 1 33%;
+  }
+
+  .left {
+    @include mq('md', max) {
+      order: 1;
+    }
+  }
+
+  .middle,
+  .right {
+    @include mq('md', max) {
+      @include rem(margin-bottom, 25px);
+    }
+  }
+
+  .logo {
+    @include rem(max-width, 50px);
+
+    @include mq('md', max) {
+      @include rem(max-width, 45px);
+    }
+  }
+
+  .copyright {
+    @include rem(font-size, 15px);
+    margin: 0;
+    color: $color-light-grey;
+  }
+}

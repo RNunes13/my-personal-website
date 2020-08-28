@@ -5,6 +5,7 @@ import React from 'react';
 import i18n from '../../i18n';
 import classnames from 'classnames';
 import LogoWhite from '../../assets/images/logo-w.png';
+import { Social } from '../../components';
 import { AppLanguageType } from '../../app/App';
 import { withNamespaces, WithNamespaces } from 'react-i18next';
 import './Sidebar.scss'
@@ -13,9 +14,6 @@ import './Sidebar.scss'
 import { ReactComponent as PhoneIcon } from '../../assets/icons/phone.svg';
 import { ReactComponent as MailIcon } from '../../assets/icons/mail.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/pin.svg';
-import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
-import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
-import { ReactComponent as SkypeIcon } from '../../assets/icons/skype.svg';
 import { ReactComponent as BrFlagIcon } from '../../assets/icons/brazil-flag.svg';
 import { ReactComponent as UsFlagIcon } from '../../assets/icons/usa-flag.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/up-arrow.svg';
@@ -51,12 +49,6 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
     { label: '+55 11 98947-7783', icon: PhoneIcon },
     { label: 'nunesrodrigo13@outlook.com', icon: MailIcon, link: 'mailto:nunesrodrigo13@outlook.com' },
     { label: 'São Paulo, SP, Brazil', icon: LocationIcon },
-  ];
-
-  const socials: { title: string, icon: React.FunctionComponent, link: string }[] = [
-    { title: 'GitHub', icon: GithubIcon, link: 'https://github.com/RNunes13' },
-    { title: 'LinkedIn', icon: LinkedinIcon, link: 'https://www.linkedin.com/in/rodrigonunes13/' },
-    { title: 'Start chat', icon: SkypeIcon, link: 'skype:live:nunesrodrigo13_1?chat' },
   ];
 
   const languages: { label: string, key: string, icon: React.FunctionComponent, onClick: () => void }[] = [
@@ -118,17 +110,7 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
             )
           }
         </ul>
-        <ul className="social-items">
-          {
-            socials.map(social =>
-              <li key={ social.title } className="social-item">
-                <a className="social-link" href={ social.link } target="_blank" title={ social.title }>
-                  <social.icon />
-                </a>
-              </li>
-            )
-          }
-        </ul>
+        <Social />
         <div className="language">
           <span
             onClick={ toggleLanguageDropdown }

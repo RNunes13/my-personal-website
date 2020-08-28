@@ -13,7 +13,7 @@
     background-color: lighten($color-black-russian, 12%);
 
     &::placeholder {
-      color: $color-grey;
+      color: darken($color-light-grey, 15%);
     }
 
     &:focus {

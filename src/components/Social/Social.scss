@@ -1,0 +1,25 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-social {
+  &__items {
+    @include reset-list;
+    display: flex;
+  }
+
+  &__item {
+    @include rem(margin-right, 10px);
+    display: flex;
+  }
+
+  &__link {
+    @include reset-link;
+    display: flex;
+
+    svg {
+      @include rem(max-width, 30px);
+      width: 100%;
+      fill: $color-accent;
+    }
+  }
+}

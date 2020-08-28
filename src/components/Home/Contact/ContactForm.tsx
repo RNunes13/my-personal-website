@@ -1,6 +1,7 @@
 
 import * as Yup from 'yup';
 import React from 'react';
+import axios from 'axios';
 import { AppContext } from '../../../app/App';
 import { withNamespaces } from 'react-i18next';
 import { Form, Formik, FormikHelpers } from 'formik';
@@ -11,6 +12,7 @@ import { ReactComponent as SentEmailIcon } from '../../../assets/icons/email-sen
 import { ReactComponent as MailErrorIcon } from '../../../assets/icons/mail-error.svg';
 
 type FormType = {
+  [key: string]: string;
   name: string;
   email: string;
   message: string;
@@ -27,18 +29,26 @@ function ContactForm({ t }: any) {
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
+      .trim()
       .required(t('contact.form.name.validation.required'))
       .min(3, t('contact.form.name.validation.length')),
     email: Yup.string()
+      .trim()
       .required(t('contact.form.email.validation.required'))
       .email(t('contact.form.email.validation.email')),
     message: Yup.string()
+      .trim()
       .required(t('contact.form.message.validation.required')),
   });
 
   async function onSubmit(values: FormType, actions: FormikHelpers<FormType>) {
+    Object.keys(values).map(k => values[k] = values[k].trim() );
+
     try {
-      console.log(values);
+      await axios.post('https://us-central1-rodrigo-nunes.cloudfunctions.net/sendMail', {
+        dest: 'nunesrodrigo13@outlook.com',
+        ...values,
+      });
 
       handleNotifier!({
         open: true,
@@ -57,6 +67,7 @@ function ContactForm({ t }: any) {
       });
     } finally {
       actions.setSubmitting(false);
+      actions.resetForm();
     }
   }
 

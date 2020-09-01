@@ -51,12 +51,12 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
     { label: 'São Paulo, SP, Brazil', icon: LocationIcon },
   ];
 
-  const languages: { label: string, key: string, icon: React.FunctionComponent, onClick: () => void }[] = [
-    { label: 'sidebar.languages.pt', key: 'pt', icon: BrFlagIcon, onClick: () => changeLanguage('pt') },
-    { label: 'sidebar.languages.en', key: 'en', icon: UsFlagIcon, onClick: () => changeLanguage('en') },
+  const languages: { label: string, keys: string[], icon: React.FunctionComponent, onClick: () => void }[] = [
+    { label: 'sidebar.languages.pt', keys: ['pt-BR', 'pt'], icon: BrFlagIcon, onClick: () => changeLanguage('pt-BR') },
+    { label: 'sidebar.languages.en', keys: ['en-US', 'en'], icon: UsFlagIcon, onClick: () => changeLanguage('en-US') },
   ];
 
-  const activeLanguage = (languages.filter(l => l.key === i18n.language) || [])[0];
+  const activeLanguage = (languages.filter(l => l.keys.includes(i18n.language)) || [])[0];
 
   return (
     <aside className={classnames("rn-sidebar", { 'is--open': isOpen })}>
@@ -117,8 +117,13 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
             className={classnames("language__active", { 'is--open': languageDropdownOpen})}
           >
             <span>
-              <activeLanguage.icon />
-              { t(activeLanguage.label) }
+              {
+                !!activeLanguage &&
+                <React.Fragment>
+                  <activeLanguage.icon />
+                  { t(activeLanguage.label) }
+                </React.Fragment>
+              }
             </span>
             <ArrowIcon />
           </span>
@@ -126,9 +131,9 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
             <ul className="language__items">
               {
                 languages
-                .filter(l => l.key !== activeLanguage.key)
+                .filter(l => !l.keys.includes(activeLanguage.keys[0]))
                 .map(l =>
-                  <li key={ l.key } className="language__item" onClick={ l.onClick }>
+                  <li key={ l.keys[0] } className="language__item" onClick={ l.onClick }>
                     <l.icon />
                     { t(l.label) }
                   </li>

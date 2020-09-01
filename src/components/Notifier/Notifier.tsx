@@ -80,7 +80,7 @@ function Notifier({
             </div>
           </div>
           <div className="action">
-            <button type="button" onClick={ close }>
+            <button type="button" onClick={ close } aria-label="Close">
               { actionText || t('notifier.actionText') }
             </button>
           </div>

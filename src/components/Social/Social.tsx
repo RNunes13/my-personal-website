@@ -19,7 +19,13 @@ function Social() {
       {
         items.map(social =>
           <li key={ social.title } className="rn-social__item">
-            <a className="rn-social__link" href={ social.link } target="_blank" title={ social.title }>
+            <a
+              rel="noopener"
+              target="_blank"
+              href={ social.link }
+              title={ social.title }
+              className="rn-social__link"
+            >
               <social.icon />
             </a>
           </li>

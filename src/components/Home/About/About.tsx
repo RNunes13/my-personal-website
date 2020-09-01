@@ -59,14 +59,14 @@ function About({ elementRef, t }: AboutProps) {
             <p>{ t('about.paragraphs.one') }</p>
             <p>{ t('about.paragraphs.two') }</p>
           </div>
-          <Button type="button">
-            <DownloadIcon />
+          <Button ariaLabel="Download" type="button">
+            <DownloadIcon aria-hidden="true" />
             { t('about.download') }
           </Button>
         </div>
         <div className="info-wrap">
           <div className="basic-info">
-            <h3 className="rn-title">{ t('about.info_title') }</h3>
+            <h2 className="rn-title">{ t('about.info_title') }</h2>
             <p>
               <strong>{ t('about.age') }: </strong> { age }
             </p>
@@ -79,7 +79,7 @@ function About({ elementRef, t }: AboutProps) {
             <Social />
           </div>
           <div className="skills">
-            <h3 className="rn-title">{ t('about.skills_title') }</h3>
+            <h2 className="rn-title">{ t('about.skills_title') }</h2>
             <div className="skills-wrap">
               <div className="skills-development">
                 <p>{ t('about.skills_dev') }</p>

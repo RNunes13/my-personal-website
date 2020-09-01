@@ -17,7 +17,7 @@ import {
   Footer,
 } from '../components';
 
-export type AppLanguageType = 'pt' | 'en';
+export type AppLanguageType = 'pt-BR' | 'en-US';
 
 interface IAppContent {
   handleNotifier(opt: OptionsType): void;
@@ -81,7 +81,7 @@ function App() {
           handleSidebar={ setSidebarIsOpen }
         />
         <div className="rn-app__content">
-          <button className={classnames('backTop', { 'is--hidden': !showBackTop})} onClick={ backToTop }>
+          <button className={classnames('backTop', { 'is--hidden': !showBackTop})} onClick={ backToTop } aria-label="Back top">
             <ArrowIcon />
           </button>
           <HomeIntroduce />

@@ -3,6 +3,7 @@
  */
 $color-pigment-green   : #18b45c;
 $color-fruit-salad     : #43a047;
+$color-spring-green    : #117e40;
 $color-light-coral     : #ff8787;
 $color-persian-red     : #d32f2f;
 $color-orange-peel     : #ffa000;
@@ -22,7 +23,7 @@ $color-black-russian-3 : #1b1b27;
 $color-black           : #000000;
 
 $color-primary         : $color-black-russian;
-$color-accent          : $color-pigment-green;
+$color-accent          : $color-spring-green;
 
 %active-link {
   color: $color-accent;

@@ -16,6 +16,29 @@
     "rewrites": [{
       "source": "**",
       "destination": "/index.html"
-    }]
+    }],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|ico)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      },
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      }
+    ]
   }
 }

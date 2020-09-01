@@ -75,5 +75,24 @@
       transition-duration: $transition-duration;
       transition-timing-function: $accelerate-ease;
     }
+
+    &--label {
+      @include rem(margin-bottom, 6px);
+      @include rem(font-size, 15px);
+      @include font-weight(semi-bold);
+      display: inline-flex;
+      
+      &.required {
+        &::after {
+          @include rem(margin-left, 3px);
+          content: '*';
+          color: $color-light-coral;
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
   }
 }

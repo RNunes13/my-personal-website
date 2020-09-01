@@ -17,6 +17,10 @@
   
   .info-wrap {
     align-items: flex-start;
+
+    h2 {
+      @include rem(font-size, 20px);
+    }
   }
 
   .title {

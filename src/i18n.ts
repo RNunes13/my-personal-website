@@ -18,6 +18,7 @@ i18n
     resources,
     fallbackLng: 'en',
     keySeparator: '.',
+    supportedLngs: ['en', 'en-US', 'pt', 'pt-BR'],
     interpolation: {
       escapeValue: false,
     },

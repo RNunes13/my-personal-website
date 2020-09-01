@@ -41,7 +41,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ sidebarIsOpen, handleSid
             title="Rodrigo Nunes | Web Developer"
           />
         </a>
-        <button className="button" onClick={ menuOnClick }>
+        <button className="button" onClick={ menuOnClick } aria-label="Menu">
           {
             sidebarIsOpen ?
             <CloseIcon /> :

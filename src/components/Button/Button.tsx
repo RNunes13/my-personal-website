@@ -7,6 +7,7 @@ interface ButtonProps {
   color?: 'primary';
   disabled?: boolean;
   className?: string;
+  ariaLabel?: string;
   type?: 'submit' | 'reset' | 'button';
   onClick?(): void;
 }
@@ -17,6 +18,7 @@ function Button({
   className,
   type = 'submit',
   color = 'primary',
+  ariaLabel = 'Button',
   onClick,
 }: React.PropsWithChildren<ButtonProps>) {
   return (
@@ -24,6 +26,7 @@ function Button({
       type={ type }
       onClick={ onClick }
       disabled={ disabled }
+      aria-label={ ariaLabel }
       className={classnames("rn-button", `rn-button__${color}`, className)}
     >
       { children }

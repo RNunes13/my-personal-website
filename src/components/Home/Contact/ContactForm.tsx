@@ -109,9 +109,10 @@ function ContactForm({ t }: any) {
           />
           <FormGroup className="button">
             <Button
+              ariaLabel="Send"
               disabled={ isSubmitting }
             >
-              <SendIcon />
+              <SendIcon aria-hidden="true" />
               {
                 isSubmitting ?
                 t('contact.form.submit.sending') :

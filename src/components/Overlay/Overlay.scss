@@ -1,0 +1,28 @@
+
+@import '../../assets/scss/settings/_config-base';
+
+.rn-overlay {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.7);
+  z-index: z('overlay');
+  transition-property: opacity, visibility;
+  transition-duration: $transition-duration;
+  transition-timing-function: $accelerate-ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &.is--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

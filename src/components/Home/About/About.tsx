@@ -74,7 +74,7 @@ function About({ elementRef, t }: AboutProps) {
               <strong>Email: </strong> <a href="mailto:nunesrodrigo13@outlook.com">nunesrodrigo13@outlook.com</a>
             </p>
             <p>
-              <strong>{ t('about.location') }: </strong> São Paulo, SP, Brazil
+              <strong>{ t('about.location') }: </strong> São Paulo, SP, { t('about.country') }
             </p>
             <Social />
           </div>

@@ -4,17 +4,20 @@ import classnames from 'classnames';
 import i18n from '../i18n';
 import { SidebarLink } from '../components/Sidebar/Sidebar';
 import { OptionsType } from '../components/Notifier/Notifier';
+import { withNamespaces, WithNamespaces } from 'react-i18next';
+import { ReactComponent as SmileIcon } from '../assets/icons/smile.svg';
 import { ReactComponent as ArrowIcon } from '../assets/icons/up-arrow.svg';
 import './App.scss';
 
 import {
   Header,
+  Footer,
   Sidebar,
+  Overlay,
   Notifier,
   HomeAbout,
   HomeContact,
   HomeIntroduce,
-  Footer,
 } from '../components';
 
 export type AppLanguageType = 'pt-BR' | 'en-US';
@@ -23,13 +26,20 @@ interface IAppContent {
   handleNotifier(opt: OptionsType): void;
 }
 
+interface AppProps extends WithNamespaces {
+  t?: any;
+}
+
 export const AppContext = React.createContext<Partial<IAppContent>>({});
 
-function App() {
+function App({ t }: AppProps) {
   React.useEffect(() => {
     window.document.addEventListener('scroll', onScroll);
 
+    welcomeMessage();
+
     return () => window.document.removeEventListener('scroll', onScroll);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [sidebarIsOpen, setSidebarIsOpen] = React.useState<boolean>(false);
@@ -71,11 +81,51 @@ function App() {
     setNotifier(oldState => ({ ...oldState, ...opt }));
   }
 
+  function welcomeMessage() {
+    const storageKey = '@RNunes:welcomeMessage';
+    const welcomeMessage = `<p>${t('notifier.welcome.paragraphs.one')}</p><br/><p>${t('notifier.welcome.paragraphs.two')}</p>`;
+
+    const onCloseWelcomeMessage = () => {
+      window.localStorage.setItem(storageKey, 'true');
+      
+      setNotifier({
+        open: false,
+        onClose: undefined,
+        customIcon: undefined,
+        customTitle: undefined,
+        message: welcomeMessage,
+      })
+    };
+
+    const alreadyBeenShown = window.localStorage.getItem(storageKey) === 'true';
+
+    if (!alreadyBeenShown) {
+      setTimeout(() =>
+        setNotifier({
+          open: true,
+          variant: 'success',
+          customIcon: SmileIcon,
+          message: welcomeMessage,
+          customTitle: t('notifier.welcome.title'),
+          onClose: onCloseWelcomeMessage,
+        })
+      , 500);
+    }
+  }
+
   return (
     <AppContext.Provider value={{ handleNotifier }} >
       <main className="rn-app">
         <Notifier { ...notifier } open={ notifier.open && !!notifier.message } />
-        <Sidebar isOpen={ sidebarIsOpen } links={ sidebarLinks } handleLanguage={ changeLanguage } />
+        <Overlay
+          show={ sidebarIsOpen }
+          onClose={ () => setSidebarIsOpen(false) }
+        />
+        <Sidebar
+          links={ sidebarLinks }
+          isOpen={ sidebarIsOpen }
+          handleLanguage={ changeLanguage }
+        />
         <Header
           sidebarIsOpen={ sidebarIsOpen }
           handleSidebar={ setSidebarIsOpen }
@@ -94,4 +144,4 @@ function App() {
   );
 }
 
-export default App;
+export default withNamespaces()(App);

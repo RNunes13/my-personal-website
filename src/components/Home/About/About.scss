@@ -13,6 +13,10 @@
     @include mq('md', max) {
       justify-content: flex-end;
     }
+
+    button {
+      display: none;
+    }
   }
   
   .info-wrap {
@@ -28,11 +32,15 @@
   }
 
   .infos {
-    flex-basis: 70%;
+    // flex-basis: 70%;
 
     @include mq('md', max) {
       @include rem(margin-bottom, 10px);
       flex-basis: 100%;
+    }
+
+    p {
+      @include rem(line-height, 20px);
     }
   }
 

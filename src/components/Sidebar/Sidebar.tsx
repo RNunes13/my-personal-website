@@ -48,7 +48,7 @@ const Sidebar: React.FunctionComponent<SidebarProps & WithNamespaces> = ({
   const contacts: { label: string, icon: React.FunctionComponent, link?: string }[] = [
     { label: '+55 11 98947-7783', icon: PhoneIcon },
     { label: 'nunesrodrigo13@outlook.com', icon: MailIcon, link: 'mailto:nunesrodrigo13@outlook.com' },
-    { label: 'São Paulo, SP, Brazil', icon: LocationIcon },
+    { label: `São Paulo, SP, ${ t('about.country') }`, icon: LocationIcon },
   ];
 
   const languages: { label: string, keys: string[], icon: React.FunctionComponent, onClick: () => void }[] = [

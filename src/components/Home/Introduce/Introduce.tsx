@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Container from '../../Container/Container';
-import ProfileImage from '../../../assets/images/placeholder-profile.jpg'
+import ProfileImage from '../../../assets/images/profile.jpg'
 import { withNamespaces } from 'react-i18next';
 import './Introduce.scss';
 

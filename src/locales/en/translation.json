@@ -25,6 +25,7 @@
     "age": "Age",
     "phone_number": "Phone No",
     "location": "Location",
+    "country": "Brazil",
     "skills_title": "My Skills",
     "skills_dev": "Development",
     "skills_personal": {
@@ -81,6 +82,13 @@
       "default": "Info!",
       "warning": "Warning!",
       "success": "Success!"
+    },
+    "welcome": {
+      "title": "Welcome!",
+      "paragraphs": {
+        "one": "My website is under development but you can view it, I hope you like it",
+        "two": "For more information you can access my linkedin"
+      }
     }
   },
   "footer": {

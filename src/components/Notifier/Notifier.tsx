@@ -17,8 +17,10 @@ export type OptionsType = {
   delay?: number;
   message?: string;
   actionText?: string;
+  customTitle?: string;
   customIcon?: React.FunctionComponent;
   variant?: 'success' | 'warning' | 'error' | 'info' | 'default';
+  onClose?(): void;
 }
 
 interface NotifierProps extends WithNamespaces {
@@ -27,17 +29,21 @@ interface NotifierProps extends WithNamespaces {
   delay?: number;
   message?: string;
   actionText?: string;
+  customTitle?: string;
   customIcon?: React.FunctionComponent;
   variant?: 'success' | 'warning' | 'error' | 'info' | 'default';
+  onClose?(): void;
 }
 
 function Notifier({
   t,
   open,
-  message,
   actionText,
   customIcon,
+  customTitle,
+  message = '',
   variant = 'default',
+  onClose,
 }: NotifierProps) {
   const { handleNotifier } = React.useContext(AppContext);
 
@@ -50,17 +56,19 @@ function Notifier({
   };
 
   const variantTitle: { [s: string]: string } = {
-    'info': t('notifier.variant.info'),
-    'error': t('notifier.variant.error'),
-    'default': t('notifier.variant.info'),
-    'warning': t('notifier.variant.warning'),
-    'success': t('notifier.variant.success'),
+    'info': customTitle || t('notifier.variant.info'),
+    'error': customTitle || t('notifier.variant.error'),
+    'default': customTitle || t('notifier.variant.info'),
+    'warning': customTitle || t('notifier.variant.warning'),
+    'success': customTitle || t('notifier.variant.success'),
   };
 
   const Icon = customIcon || variantIcon[variant];
   const title = variantTitle[variant];
 
   function close() {
+    onClose && onClose();
+
     handleNotifier!({
       open: false,
     })
@@ -76,7 +84,7 @@ function Notifier({
             </div>
             <div className="info">
               <p className="info-title">{ title }</p>
-              <p className="info-message">{ message }</p>
+              <div className="info-message" dangerouslySetInnerHTML={{ __html: message }} />
             </div>
           </div>
           <div className="action">

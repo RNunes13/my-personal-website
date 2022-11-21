@@ -16,12 +16,19 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "*": ["src/*"],
       "utils/*": ["utils/*"],
       "styles/*": ["styles/*"],
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "components": ["components"],
+      "/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-i18next.config.js"],
+  "include": [
+    "./src/**/*",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next-i18next.config.js"
+  ],
   "exclude": ["node_modules"]
 }

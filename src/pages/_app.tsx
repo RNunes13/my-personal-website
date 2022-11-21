@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { Seo } from 'components/Seo/Seo'
+import { appWithTranslation } from 'next-i18next'
 import createEmotionCache from 'utils/createEmotionCache'
 
 import type { AppProps } from 'next/app'
@@ -24,4 +25,4 @@ const MyApp = (props: MyAppProps) => {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

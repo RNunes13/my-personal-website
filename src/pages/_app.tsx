@@ -1,8 +1,10 @@
 import Head from 'next/head'
-import { CacheProvider, EmotionCache } from '@emotion/react'
+import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react'
+
 import { Seo } from 'components/Seo/Seo'
 import { appWithTranslation } from 'next-i18next'
 import createEmotionCache from 'utils/createEmotionCache'
+import { theme } from 'styles/theme/Theme'
 
 import type { AppProps } from 'next/app'
 
@@ -18,9 +20,10 @@ const MyApp = (props: MyAppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      `
       <Seo />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </CacheProvider>
   )
 }

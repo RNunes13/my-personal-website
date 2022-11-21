@@ -1,6 +1,9 @@
-import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { CacheProvider, EmotionCache } from '@emotion/react'
+import { Seo } from 'components/Seo/Seo'
 import createEmotionCache from 'utils/createEmotionCache'
+
+import type { AppProps } from 'next/app'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -11,6 +14,11 @@ const MyApp = (props: MyAppProps) => {
 
   return (
     <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      `
+      <Seo />
       <Component {...pageProps} />
     </CacheProvider>
   )

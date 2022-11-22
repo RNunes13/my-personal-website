@@ -1,6 +1,6 @@
 import React from 'react'
-import { Icon } from 'components'
-import { List, Item, Link } from './SocialMedia.styles'
+import { Icon, Link } from 'components'
+import { List, Item } from './SocialMedia.styles'
 
 const items = [
   {
@@ -27,10 +27,8 @@ export const SocialMedia = () => (
   <List>
     {items.map(({ title, icon, link, color }) => (
       <Item key={title}>
-        <Link href={link} passHref>
-          <a rel="noopener" target="_blank" title={title}>
-            <Icon icon={icon} fill={color} />
-          </a>
+        <Link rel="noopener" target="_blank" href={link} title={title}>
+          <Icon icon={icon} fill={color} />
         </Link>
       </Item>
     ))}

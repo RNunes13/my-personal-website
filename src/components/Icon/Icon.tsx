@@ -2,12 +2,14 @@ import React, { Suspense } from 'react'
 
 import { IconsLocale } from './helpers/icons-locale'
 import { IconsSocial } from './helpers/icons-social'
+import { IconsSystem } from './helpers/icons-system'
 
 import { Wrapper } from './Icon.styles'
 
 export const iconsLibraries: Record<string, any> = {
   locale: IconsLocale,
   social: IconsSocial,
+  system: IconsSystem,
 }
 
 export interface IIconProps extends React.HTMLProps<HTMLElement> {

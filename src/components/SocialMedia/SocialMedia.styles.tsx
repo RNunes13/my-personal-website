@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import NextLink from 'next/link'
 
 export const List = styled.ul`
   display: flex;
@@ -7,5 +6,3 @@ export const List = styled.ul`
 `
 
 export const Item = styled.li``
-
-export const Link = styled(NextLink)``

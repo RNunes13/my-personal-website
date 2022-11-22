@@ -113,6 +113,10 @@ const theme: IThemeProps = {
     base_20: '#DDE1E3',
     base_10: '#F4F5F6',
     base_0: '#FFFFFF',
+
+    github: '#5c6bc0',
+    linkedin: '#007ab9',
+    skype: '#1b92d0',
   },
   radius: '4px',
   index: {

@@ -2,12 +2,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 
+import { Footer } from 'components'
+
 export default function Home() {
   const { t } = useTranslation('common')
 
   return (
     <main>
-      <h1>{t('greeting.morning')}</h1>
+      <Footer t={t} />
     </main>
   )
 }

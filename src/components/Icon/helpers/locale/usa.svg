@@ -1,0 +1,28 @@
+<svg width="100%" height="100%" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+  <rect width="22" height="16" rx="2.32727" fill="#EEF3F8" />
+  <path d="M0 2.32727C0 1.04195 1.04196 0 2.32727 0H12.375V10.1818H0V2.32727Z" fill="#41479B" />
+  <path d="M12.3745 0H20.545C21.3483 0 21.9995 0.651222 21.9995 1.45455H12.3745V0Z" fill="#DC251C" />
+  <rect x="12.3745" y="2.90918" width="9.625" height="1.45455" fill="#DC251C" />
+  <rect x="12.3745" y="5.81812" width="9.625" height="1.45455" fill="#DC251C" />
+  <rect x="12.3745" y="8.72729" width="9.625" height="1.45454" fill="#DC251C" />
+  <rect x="-0.000488281" y="11.6365" width="22" height="1.45455" fill="#DC251C" />
+  <path d="M-0.000488281 14.5454H21.9995C21.9995 15.3487 21.3483 16 20.545 16H1.45406C0.650733 16 -0.000488281 15.3487 -0.000488281 14.5454Z" fill="#DC251C" />
+  <rect x="1.37451" y="1.45459" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="4.12451" y="1.45459" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="6.87451" y="1.45459" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="9.62451" y="1.45459" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="1.37451" y="4.36377" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="4.12451" y="4.36377" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="6.87451" y="4.36377" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="2.74951" y="5.81812" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="5.49951" y="5.81812" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="8.24951" y="5.81812" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="2.74951" y="2.90918" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="5.49951" y="2.90918" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="8.24951" y="2.90918" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="9.62451" y="4.36377" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="1.37451" y="7.27271" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="4.12451" y="7.27271" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="6.87451" y="7.27271" width="1.375" height="1.45455" fill="#C5D0EC" />
+  <rect x="9.62451" y="7.27271" width="1.375" height="1.45455" fill="#C5D0EC" />
+</svg>

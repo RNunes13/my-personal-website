@@ -1,4 +1,5 @@
 import { IMixinProps } from '../theme/Theme'
+import { isMobile } from './Breakpoint'
 
 const gridBase =
   () =>
@@ -11,6 +12,11 @@ const gridBase =
   padding-left: ${props.theme.spaces.space3};
   margin-right: auto;
   margin-left: auto;
+
+  ${isMobile()(props)} {
+    padding-right: ${props.theme.spaces.space2};
+    padding-left: ${props.theme.spaces.space2};
+  }
 `
 
 export const grid940 =

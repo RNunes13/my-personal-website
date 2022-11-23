@@ -40,5 +40,3 @@ export const Button: FC<ButtonProps> = ({
     </ButtonStyled>
   )
 }
-
-export default Button

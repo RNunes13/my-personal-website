@@ -30,6 +30,11 @@ const customJestConfig = {
     '^styles(.*)$': '<rootDir>/src/styles/$1',
     '^utils(.*)$': '<rootDir>/src/utils/$1',
   },
+  collectCoverageFrom: ['src/**/*.[jt]sx'],
+  coveragePathIgnorePatterns: [
+    '.styles.[jt]sx',
+    'pages'
+  ],
   coverageThreshold: {
     global: {
       branches: 0,

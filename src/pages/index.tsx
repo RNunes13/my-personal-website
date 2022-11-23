@@ -1,12 +1,15 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { GetStaticProps } from 'next'
 
-import { Overlay } from 'components'
+import { useTranslation } from 'next-i18next'
+import { Sidebar } from 'components'
 
 export default function Home() {
+  const { t } = useTranslation()
+
   return (
     <main>
-      <Overlay show={false} />
+      <Sidebar t={t} isOpen={true}/>
     </main>
   )
 }

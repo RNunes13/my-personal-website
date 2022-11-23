@@ -5,13 +5,22 @@ import { IThemeProps } from 'styles/theme/Theme'
 interface IStyledProps extends React.HTMLProps<HTMLElement> {
   fill?: string
   theme?: IThemeProps
+  height?: number
+  width?: string
 }
 
 export const Wrapper = styled.i<IStyledProps>`
-  width: ${({ theme }: any) => theme?.icon?.medium};
-  height: ${({ theme }: any) => theme?.icon?.medium};
   fill: ${({ fill, theme }) => theme?.colors[fill as any] ?? 'black'};
   display: flex;
+  
+  width: ${({ theme, width }) => (
+    width ? `${width}px` : theme?.icon?.medium
+  )};
+
+
+  height: ${({ theme, height }) => (
+    height ? `${height}px` : theme?.icon?.medium
+  )};
 
   svg {
     width: 100%;

@@ -21,6 +21,7 @@
     "@typescript-eslint/no-empty-interface": "off",
     "linebreak-style": "off",
     "import/no-cycle": "off",
+    "no-bitwise": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

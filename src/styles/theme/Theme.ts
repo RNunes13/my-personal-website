@@ -96,7 +96,7 @@ interface IThemeProps {
 const theme: IThemeProps = {
   colors: {
     primary: '#181923',
-    accent: '#117e40',
+    accent: '#419866',
 
     pigmentGreen: '#18b45c',
     goblin: '#38853c',

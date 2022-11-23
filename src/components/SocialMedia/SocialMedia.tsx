@@ -23,8 +23,8 @@ const items = [
   },
 ]
 
-export const SocialMedia = () => (
-  <List>
+export const SocialMedia = ({ className }: { className?: string }) => (
+  <List className={className}>
     {items.map(({ title, icon, link, color }) => (
       <Item key={title}>
         <Link rel="noopener" target="_blank" href={link} title={title}>

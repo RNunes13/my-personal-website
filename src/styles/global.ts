@@ -2,6 +2,10 @@ import { css } from '@emotion/react'
 import { theme } from './theme/Theme'
 
 export const GlobalStyles = css`
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -10,7 +14,6 @@ export const GlobalStyles = css`
     font-weight: 400;
     font-family: ${theme.fonts.baseFontFamily};
     word-break: break-word;
-    box-sizing: border-box;
   }
 
   body {

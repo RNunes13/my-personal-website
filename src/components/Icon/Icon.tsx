@@ -16,6 +16,8 @@ export interface IIconProps extends React.HTMLProps<HTMLElement> {
   className?: string
   icon?: string
   fill?: string
+  height?: number
+  width?: number
 }
 
 export const Icon: React.FC<IIconProps> = ({ icon, ...rest }) => {

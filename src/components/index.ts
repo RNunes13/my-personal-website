@@ -7,3 +7,7 @@ export { Footer } from './Footer/Footer'
 export { Header } from './Header/Header'
 export { Link } from './Link/Link'
 export { Overlay } from './Overlay/Overlay'
+export { Sidebar } from './Sidebar/Sidebar'
+export { Dropdown } from './Dropdown/Dropdown'
+
+export type { DropdownItemType } from './Dropdown/Dropdown'

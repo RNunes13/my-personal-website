@@ -5,10 +5,10 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 type AnchorType = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>
 
 interface LinkProps extends AnchorType {
-  children?: React.ReactElement
   href: string | UrlObject
   nextProps?: Omit<NextLinkProps, 'href'>
   className?: string
+  children?: React.ReactElement | React.ReactNode | string
 }
 
 export const Link: React.FC<LinkProps> = ({
@@ -18,7 +18,7 @@ export const Link: React.FC<LinkProps> = ({
   children,
   ...rest
 }) => (
-  <NextLink href={href} className={className} passHref {...nextProps}>
-    <a {...rest}>{children}</a>
+  <NextLink href={href} passHref {...nextProps}>
+    <a className={className} {...rest}>{children}</a>
   </NextLink>
 )

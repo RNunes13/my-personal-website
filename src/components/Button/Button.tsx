@@ -4,12 +4,13 @@ import { Button as ButtonStyled } from './Button.styles'
 
 type ColorType = keyof IColorsProps
 
-interface ButtonProps {
+export interface ButtonProps {
   color?: ColorType
+  fontColor?: ColorType
   disabled?: boolean
   className?: string
   ariaLabel?: string
-  children: ReactNode
+  children?: string | ReactNode
   onClick?(): void
 }
 
@@ -17,6 +18,7 @@ export const Button: FC<ButtonProps> = ({
   disabled,
   className,
   color = 'primary',
+  fontColor = 'base_0',
   ariaLabel = 'Button',
   children,
   onClick,
@@ -27,10 +29,12 @@ export const Button: FC<ButtonProps> = ({
     <ButtonStyled
       type="button"
       color={color as string}
+      fontColor={fontColor as string}
       disabled={disabled}
       className={className}
       aria-label={ariaLabel}
       onClick={onClick}
+      data-testid='button'
     >
       {children}
     </ButtonStyled>

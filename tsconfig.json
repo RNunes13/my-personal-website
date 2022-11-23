@@ -28,7 +28,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next-i18next.config.js"
+    "next-i18next.config.js",
+    "config/jest.setup.js"
   ],
   "exclude": ["node_modules"]
 }

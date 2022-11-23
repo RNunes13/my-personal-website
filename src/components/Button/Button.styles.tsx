@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { ctaBold } from 'styles/mixins/Typography'
 
-export const Button = styled.button`
+export const Button = styled.button<{ fontColor?: string }>`
   display: flex;
   align-items: center;
   padding: ${({
@@ -22,10 +22,10 @@ export const Button = styled.button`
   transition-duration: $transition-duration;
   transition-timing-function: $accelerate-ease;
 
-  ${({ theme, color = 'primary', disabled }) => `
+  ${({ theme, color = 'primary', fontColor = 'base_0', disabled }) => `
     background-color: ${disabled ? theme.colors.base_20 : theme.colors[color]};
-    color: ${disabled ? theme.colors.base_40 : theme.colors.base_0};
-    fill: ${disabled ? theme.colors.base_40 : theme.colors.base_0};
+    color: ${disabled ? theme.colors.base_40 : theme.colors[fontColor]};
+    fill: ${disabled ? theme.colors.base_40 : theme.colors[fontColor]};
 
     &:hover {
       filter: brightness(85%);

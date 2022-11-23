@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button unit test should render the button with the accent color: Button - Accent color 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  text-transform: none!important;
+  outline: none!important;
+  cursor: pointer;
+  transition-property: color,border,background;
+  transition-duration: $transition-duration;
+  transition-timing-function: $accelerate-ease;
+  background-color: #419866;
+  color: #FFFFFF;
+  fill: #FFFFFF;
+}
+
+.emotion-0:hover {
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+
+.emotion-0 svg {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+<button
+  aria-label="Button"
+  className="emotion-0 emotion-1"
+  color="accent"
+  data-testid="button"
+  type="button"
+>
+  Button label
+</button>
+`;
+
+exports[`Button unit test should render the button with the primary color: Button - Primary color 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  text-transform: none!important;
+  outline: none!important;
+  cursor: pointer;
+  transition-property: color,border,background;
+  transition-duration: $transition-duration;
+  transition-timing-function: $accelerate-ease;
+  background-color: #181923;
+  color: #FFFFFF;
+  fill: #FFFFFF;
+}
+
+.emotion-0:hover {
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+
+.emotion-0 svg {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+<button
+  aria-label="Button"
+  className="emotion-0 emotion-1"
+  color="primary"
+  data-testid="button"
+  type="button"
+>
+  Button label
+</button>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button unit test should render container with default grid (1290): Container - Grid default (1290) 1`] = `
+.emotion-0 {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1350px;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-0 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  <div
+    data-testid="container-children"
+  >
+    Container children
+  </div>
+</div>
+`;
+
+exports[`Button unit test should render container with grid of 940: Container - Grid 940 1`] = `
+.emotion-0 {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+}
+
+@media only screen and (max-width: 768px) {
+  .emotion-0 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  <div
+    data-testid="container-children"
+  >
+    Container children
+  </div>
+</div>
+`;

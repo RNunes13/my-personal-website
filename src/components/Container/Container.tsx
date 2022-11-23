@@ -4,7 +4,7 @@ import * as Grid from 'styles/mixins/Grid'
 
 export type GridType = 'grid1290' | 'grid940'
 
-interface ContainerProps {
+export interface ContainerProps {
   className?: string
   grid?: GridType
   children?: React.ReactNode

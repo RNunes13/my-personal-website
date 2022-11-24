@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { medium, scrollbar } from 'styles/mixins'
-import { newShade } from 'utils/helpers';
+import { newShade } from 'utils/helpers'
 import { SocialMedia } from 'components'
 
-export const WIDTH = 270;
+export const WIDTH = 270
 
 export const Sidebar = styled.aside<{ isOpen: boolean }>`
   position: fixed;
@@ -21,7 +21,9 @@ export const Sidebar = styled.aside<{ isOpen: boolean }>`
     transform: translateX(-110%);
   }
 
-  ${({ isOpen }) => !!isOpen && `
+  ${({ isOpen }) =>
+    !!isOpen &&
+    `
     ${medium()} {
       transform: translateX(0);
     }
@@ -29,7 +31,12 @@ export const Sidebar = styled.aside<{ isOpen: boolean }>`
 `
 
 export const InfoWrap = styled.div`
-  padding: ${({ theme: { spaces: { space2, space1 }}}) => `${space2} ${space1}`};
+  padding: ${({
+    theme: {
+      spaces: { space2, space1 },
+    },
+  }) => `${space2} ${space1}`};
+  min-height: 350px;
 `
 
 export const Container = styled.div`
@@ -39,11 +46,9 @@ export const Container = styled.div`
   overflow-y: auto;
 
   & > div,
-  & > figure, {
+  & > figure {
     &:not(:last-child) {
-      border-bottom:
-        1px
-        solid
+      border-bottom: 1px solid
         ${({ theme }) => newShade(theme.colors.primary, 20)};
     }
   }

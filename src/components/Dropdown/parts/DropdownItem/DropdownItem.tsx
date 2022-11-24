@@ -10,9 +10,11 @@ export type IconType = {
 
 export interface DropdownItemProps {
   label: string
+  className?: string
+  disabled?: boolean
   startIcon?: string | IconType
   endIcon?: string | IconType
-  onClick: () => void
+  onClick?: () => void
 }
 
 export const getIconProps = (iconProp: string | IconType) => {
@@ -27,9 +29,16 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   label,
   startIcon,
   endIcon,
+  disabled,
+  className,
   onClick,
 }) => (
-  <Styled.Item onClick={onClick} data-testid="dropdownItem">
+  <Styled.Item
+    className={className}
+    disabled={disabled}
+    onClick={onClick}
+    data-testid="dropdownItem"
+  >
     {!!startIcon && <Styled.Icon {...getIconProps(startIcon)} />}
     <Styled.Label>{label}</Styled.Label>
     {!!endIcon && <Styled.Icon {...getIconProps(endIcon)} />}

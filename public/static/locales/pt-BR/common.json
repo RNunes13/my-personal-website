@@ -6,6 +6,7 @@
       "contact": "Contato"
     },
     "languages": {
+      "select": "Selecione uma língua",
       "pt": "Português",
       "en": "Inglês"
     }

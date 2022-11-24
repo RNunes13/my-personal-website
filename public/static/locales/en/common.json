@@ -6,6 +6,7 @@
       "contact": "Contact"
     },
     "languages": {
+      "select": "Select a language",
       "pt": "Portuguese",
       "en": "English"
     }
@@ -38,7 +39,7 @@
     "paragraphs": {
       "one": "I'm a website developer, who likes to work with creative and challenging projects that change people's lives, providing the best experiences. As a programmer I always try to work with the best practices for an optimized and functional code, I like to try new technologies and tools that can improve the development.",
       "two": "In my free time I dedicate myself to reading, hobbies and research on emerging technologies, design strategies and concepts, and everything else that can be applied to web development"
-    } 
+    }
   },
   "contact": {
     "title": "Contact Me",

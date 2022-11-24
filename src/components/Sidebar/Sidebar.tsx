@@ -47,7 +47,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ t, isOpen }) => {
         <Styled.InfoWrap>
           <ContactLinks t={t} />
           <Styled.Social />
-          <Dropdown active={activeLanguage} options={locales} />
+          <Dropdown
+            options={locales}
+            active={activeLanguage}
+            placeholder={t('sidebar.languages.select')}
+          />
         </Styled.InfoWrap>
       </Styled.Container>
     </Styled.Sidebar>

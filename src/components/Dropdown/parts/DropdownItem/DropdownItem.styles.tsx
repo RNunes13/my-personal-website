@@ -3,19 +3,29 @@ import { bodySmallBold } from 'styles/mixins'
 import { newShade } from 'utils/helpers'
 import { Icon as IconComp } from 'components'
 
-export const Item = styled.li`
+export const Item = styled.li<{ disabled?: boolean }>`
+  cursor: pointer;
   display: flex;
   align-items: center;
   padding: 5px;
   gap: 8px;
-  cursor: pointer;
   border-radius: ${({ theme }) => theme.radius};
   color: ${({ theme }) => theme.colors.base_0};
   background-color: ${({ theme }) => newShade(theme.colors.primary, 20)};
-  transition: background-color 200ms ${({ theme }) => theme.transitions.decelerate};
+
+  transition: background-color 200ms
+    ${({ theme }) => theme.transitions.decelerate};
+
+  ${({ theme, disabled }) =>
+    disabled &&
+    `
+    cursor: default;
+    color: ${newShade(theme.colors.base_60, 90)};
+  `}
 
   &:hover {
-    background-color: ${({ theme }) => newShade(theme.colors.primary, 40)};
+    background-color: ${({ theme, disabled }) =>
+      !disabled && newShade(theme.colors.primary, 40)};
   }
 `
 

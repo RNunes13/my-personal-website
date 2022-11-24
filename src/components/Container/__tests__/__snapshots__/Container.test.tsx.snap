@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button unit test should render container with default grid (1290): Container - Grid default (1290) 1`] = `
+exports[`Container unit test should render container with default grid (1290): Container - Grid default (1290) 1`] = `
 .emotion-0 {
   width: 100%;
   box-sizing: border-box;
@@ -30,7 +30,7 @@ exports[`Button unit test should render container with default grid (1290): Cont
 </div>
 `;
 
-exports[`Button unit test should render container with grid of 940: Container - Grid 940 1`] = `
+exports[`Container unit test should render container with grid of 940: Container - Grid 940 1`] = `
 .emotion-0 {
   width: 100%;
   box-sizing: border-box;

@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownItem unit test should render with end icon as object: DropdownItem - Ennd icon as object 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #2c2d37;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.emotion-0:hover {
+  background-color: #40414b;
+}
+
+.emotion-2 {
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+<li
+  className="emotion-0 emotion-1"
+  data-testid="dropdownItem"
+  onClick={[MockFunction]}
+>
+  <span
+    className="emotion-2 emotion-3"
+  >
+    Item label
+  </span>
+  <svg
+    className="emotion-4 emotion-5"
+    data-testid="icon_system_mennu"
+    fill="primary"
+    height={16}
+    icon="system:mennu"
+    width={16}
+  />
+</li>
+`;
+
+exports[`DropdownItem unit test should render with end icon as string: DropdownItem - End icon as string 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #2c2d37;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.emotion-0:hover {
+  background-color: #40414b;
+}
+
+.emotion-2 {
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+<li
+  className="emotion-0 emotion-1"
+  data-testid="dropdownItem"
+  onClick={[MockFunction]}
+>
+  <span
+    className="emotion-2 emotion-3"
+  >
+    Item label
+  </span>
+  <svg
+    className="emotion-4 emotion-5"
+    data-testid="icon_system_menu"
+    fill="base_0"
+    icon="system:menu"
+  />
+</li>
+`;
+
+exports[`DropdownItem unit test should render with start icon as object: DropdownItem - Start icon as object 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #2c2d37;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.emotion-0:hover {
+  background-color: #40414b;
+}
+
+.emotion-2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.emotion-4 {
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+<li
+  className="emotion-0 emotion-1"
+  data-testid="dropdownItem"
+  onClick={[MockFunction]}
+>
+  <svg
+    className="emotion-2 emotion-3"
+    data-testid="icon_system_mennu"
+    fill="accent"
+    height={32}
+    icon="system:mennu"
+    width={32}
+  />
+  <span
+    className="emotion-4 emotion-5"
+  >
+    Item label
+  </span>
+</li>
+`;
+
+exports[`DropdownItem unit test should render with start icon as string: DropdownItem - Start icon as string 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #2c2d37;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  transition: background-color 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.emotion-0:hover {
+  background-color: #40414b;
+}
+
+.emotion-2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.emotion-4 {
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans",BlinkMacSystemFont,-apple-system,sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+<li
+  className="emotion-0 emotion-1"
+  data-testid="dropdownItem"
+  onClick={[MockFunction]}
+>
+  <svg
+    className="emotion-2 emotion-3"
+    data-testid="icon_system_menu"
+    fill="base_0"
+    icon="system:menu"
+  />
+  <span
+    className="emotion-4 emotion-5"
+  >
+    Item label
+  </span>
+</li>
+`;

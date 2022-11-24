@@ -8,7 +8,7 @@ export type IconType = {
   width?: number
 }
 
-interface DropdownItemProps {
+export interface DropdownItemProps {
   label: string
   startIcon?: string | IconType
   endIcon?: string | IconType
@@ -16,10 +16,7 @@ interface DropdownItemProps {
 }
 
 export const getIconProps = (iconProp: string | IconType) => {
-  if (typeof iconProp === 'string') return {
-    icon: iconProp,
-    fill: 'base_0',
-  }
+  if (typeof iconProp === 'string') return { icon: iconProp, fill: 'base_0' }
 
   const { icon, color, height, width } = iconProp
 
@@ -32,7 +29,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   endIcon,
   onClick,
 }) => (
-  <Styled.Item onClick={onClick}>
+  <Styled.Item onClick={onClick} data-testid="dropdownItem">
     {!!startIcon && <Styled.Icon {...getIconProps(startIcon)} />}
     <Styled.Label>{label}</Styled.Label>
     {!!endIcon && <Styled.Icon {...getIconProps(endIcon)} />}

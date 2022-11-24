@@ -32,7 +32,7 @@ export const Icon: React.FC<IIconProps> = ({ icon, ...rest }) => {
 
   return (
     <Suspense fallback={<Wrapper />}>
-      <Wrapper {...(rest as any)} data-testid={icon}>
+      <Wrapper {...(rest as any)} data-testid={`icon_${library}_${iconName}`}>
         {iconComponent}
       </Wrapper>
     </Suspense>

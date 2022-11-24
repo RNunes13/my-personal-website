@@ -10,7 +10,7 @@ const getComponent = (props: Partial<ContainerProps> = {}) => (
   <Container {...defaultProps} {...props} />
 )
 
-describe('Button unit test', () => {
+describe('Container unit test', () => {
   it('should render container with default grid (1290)', () => {
     const tree = renderWithTheme(getComponent()).toJSON()
     expect(tree).toMatchSnapshot('Container - Grid default (1290)')

@@ -23,6 +23,7 @@
     "import/no-cycle": "off",
     "no-bitwise": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "comma-dangle": "error",
     "import/extensions": [
       "error",
       "ignorePackages",

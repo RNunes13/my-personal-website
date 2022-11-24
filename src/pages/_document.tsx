@@ -14,7 +14,7 @@ import createEmotionCache from 'utils/createEmotionCache'
 
 export default class MyDocument extends Document {
   static async getInitialProps(
-    ctx: DocumentContext
+    ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {
     const originalRenderPage = ctx.renderPage
 

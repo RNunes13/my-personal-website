@@ -51,5 +51,5 @@ const reduceIcons = (accum: any, [key, value]: [key: string, value: any]) => {
 
 export const iconsAsList = Object.entries(iconsLibraries).reduce(
   reduceIcons,
-  []
+  [],
 )

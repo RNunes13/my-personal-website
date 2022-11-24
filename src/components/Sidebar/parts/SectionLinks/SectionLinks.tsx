@@ -19,7 +19,7 @@ export const SectionLinks: React.FC<SectionLinksProps> = memo(({ t }) => (
           <Styled.Link href="#">
             {t(label)}
           </Styled.Link>
-        </Styled.Item>
+        </Styled.Item>,
       )}
     </Styled.Links>
   </Styled.Container>

@@ -3,7 +3,7 @@ import { Button } from '../Button'
 import type { ButtonProps } from '../Button'
 
 const defaultProps: ButtonProps = {
-  children: 'Button label'
+  children: 'Button label',
 }
 
 const getComponent = (props: Partial<ButtonProps> = {}) => (
@@ -25,16 +25,16 @@ describe('Button unit test', () => {
 
   it('should render nothing if no children is provided', () => {
     const { container } = render(getComponent({ children: null }))
-    expect(container).toBeEmptyDOMElement();
+    expect(container).toBeEmptyDOMElement()
   })
 
   it('should render the button with the primary color', () => {
     const tree = renderWithTheme(getComponent({ color: 'primary' })).toJSON()
-    expect(tree).toMatchSnapshot('Button - Primary color');
+    expect(tree).toMatchSnapshot('Button - Primary color')
   })
 
   it('should render the button with the accent color', () => {
     const tree = renderWithTheme(getComponent({ color: 'accent' })).toJSON()
-    expect(tree).toMatchSnapshot('Button - Accent color');
+    expect(tree).toMatchSnapshot('Button - Accent color')
   })
 })

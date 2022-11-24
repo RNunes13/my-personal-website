@@ -32,7 +32,7 @@ export const resetLink = () => css`
 export const scrollbar = ({
   size = 8,
   primary = newShade(theme.colors.primary, 90),
-  secondary = 'transparent'
+  secondary = 'transparent',
 } = {}) => css`
   &::-webkit-scrollbar {
     width: ${size}px;

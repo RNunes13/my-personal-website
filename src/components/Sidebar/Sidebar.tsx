@@ -1,48 +1,43 @@
-import React from 'react';
+import React from 'react'
 import { useRouter } from 'next/router'
-import { Dropdown } from "components";
-import type { DropdownItemType } from "components";
+import { Dropdown } from 'components'
+import type { DropdownItemType } from 'components'
 
 import { Logo, SectionLinks, ContactLinks } from './parts'
 
 import * as Styled from './Sidebar.styles'
 
 export interface SidebarLink {
-  label: string;
+  label: string
 }
 
 interface SidebarProps {
-  isOpen: boolean;
-  t: (key: string) => string;
+  isOpen: boolean
+  t: (key: string) => string
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ t, isOpen }) => {
   const { locale, push, pathname, asPath } = useRouter()
 
-  const handleLocale = (nextLocale: string) => () => (
-    push(
-      pathname,
-      asPath,
-      { locale: nextLocale },
-    )
-  )
+  const handleLocale = (nextLocale: string) => () =>
+    push(pathname, asPath, { locale: nextLocale })
 
   const locales: DropdownItemType[] = [
     {
       id: 'pt-BR',
       label: t('sidebar.languages.pt'),
       startIcon: 'locale:brazil',
-      onClick: handleLocale('pt-BR')
+      onClick: handleLocale('pt-BR'),
     },
     {
       id: 'en',
       label: t('sidebar.languages.en'),
       startIcon: 'locale:usa',
-      onClick: handleLocale('en')
+      onClick: handleLocale('en'),
     },
-  ];
+  ]
 
-  const activeLanguage = locales.find(({ id }) => id === locale);
+  const activeLanguage = locales.find(({ id }) => id === locale)
 
   return (
     <Styled.Sidebar isOpen={isOpen}>
@@ -56,7 +51,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ t, isOpen }) => {
         </Styled.InfoWrap>
       </Styled.Container>
     </Styled.Sidebar>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

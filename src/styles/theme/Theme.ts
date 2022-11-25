@@ -9,6 +9,7 @@ enum COLORS {
   persianRed = 'persianRed',
   orangePeel = 'orangePeel',
   navyBlue = 'navyBlue',
+  blackRussian = 'blackRussian',
 
   /** Base */
   base_100 = 'base_100',
@@ -31,6 +32,8 @@ interface IColorsProps {
   persianRed: string
   orangePeel: string
   navyBlue: string
+  blackRussian: string
+
   base_100: string
   base_80: string
   base_60: string
@@ -105,6 +108,7 @@ const theme: IThemeProps = {
     persianRed: '#d32f2f',
     orangePeel: '#ffa000',
     navyBlue: '#1976d2',
+    blackRussian: '#1f202eBlack',
 
     base_100: '#000000',
     base_80: '#425158',

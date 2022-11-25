@@ -6,7 +6,7 @@ import {
   Global,
 } from '@emotion/react'
 
-import { Seo } from 'components/Seo/Seo'
+import { Seo, Layout } from 'components'
 import { appWithTranslation } from 'next-i18next'
 import createEmotionCache from 'utils/createEmotionCache'
 
@@ -30,7 +30,9 @@ const MyApp = (props: MyAppProps) => {
       <Global styles={GlobalStyles} />
       <Seo />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </CacheProvider>
   )

@@ -1,27 +1,18 @@
 import React, { useEffect, useCallback } from 'react'
-import { Link } from '../index'
+import { useLayoutContext } from 'components/Layout/Layout'
 
+import { Link } from '../index'
 import * as Styled from './Header.styles'
 
-interface HeaderProps {
-  sidebarIsOpen: boolean
-  handleSidebar: (open: boolean) => void
-}
-
-export const Header: React.FC<HeaderProps> = ({
-  sidebarIsOpen,
-  handleSidebar,
-}) => {
+export const Header = () => {
   const [fill, setFill] = React.useState<boolean>(false)
+
+  const { sidebarIsOpen, toggleSidebar } = useLayoutContext()
 
   const onScroll = useCallback(() => {
     if (window.pageYOffset >= 100) setFill(true)
     else setFill(false)
   }, [setFill])
-
-  const menuOnClick = useCallback(() => {
-    handleSidebar(!sidebarIsOpen)
-  }, [sidebarIsOpen, handleSidebar])
 
   useEffect(() => {
     window.document.addEventListener('scroll', onScroll)
@@ -29,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   }, [onScroll])
 
   return (
-    <Styled.Header fill={fill}>
+    <Styled.Header fill={fill || null}>
       <Styled.Container className="rn-header__container">
         <Link href="/">
           <Styled.Logo
@@ -40,9 +31,9 @@ export const Header: React.FC<HeaderProps> = ({
             title="Rodrigo Nunes | Web Developer"
           />
         </Link>
-        <Styled.Menu onClick={menuOnClick} aria-label="Menu">
+        <Styled.Menu onClick={toggleSidebar} aria-label="Menu">
           <Styled.Icon
-            fill='base_0'
+            fill="base_0"
             icon={sidebarIsOpen ? 'system:close' : 'system:menu'}
           />
         </Styled.Menu>

@@ -1,16 +1,15 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { GetStaticProps } from 'next'
 
-import { useTranslation } from 'next-i18next'
-import { Sidebar } from 'components'
-
 export default function Home() {
-  const { t } = useTranslation()
-
   return (
-    <main>
-      <Sidebar t={t} isOpen={true}/>
-    </main>
+    <div>
+      {Array(80)
+        .fill(null)
+        .map((_, idx) => (
+          <p key={idx}>Home view</p>
+        ))}
+    </div>
   )
 }
 

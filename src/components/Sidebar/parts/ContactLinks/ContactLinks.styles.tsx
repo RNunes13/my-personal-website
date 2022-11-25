@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Link as LinkComp } from 'components'
+import { Link as LinkComp } from 'components/Link/Link'
 import { bodySmallBold, resetLink, resetList } from 'styles/mixins'
 
 export const Links = styled.ul`

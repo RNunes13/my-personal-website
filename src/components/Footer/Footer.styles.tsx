@@ -10,6 +10,7 @@ export const Footer = styled.footer`
   color: ${({ theme }) => theme.colors.base_0};
   padding-top: ${({ theme }) => theme.spaces.space3};
   padding-bottom: ${({ theme }) => theme.spaces.space3};
+  grid-area: footer;
 
   &::before {
     content: '';
@@ -61,4 +62,5 @@ export const Logo = styled(FutureImage)`
 
 export const Social = styled(SocialMedia)`
   flex: 0 1 33%;
+  justify-content: flex-end;
 `

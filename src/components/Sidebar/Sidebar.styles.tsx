@@ -17,6 +17,8 @@ export const Sidebar = styled.aside<{ isOpen: boolean }>`
   transition: transform 200ms ${({ theme }) => theme.transitions.standard};
   z-index: ${({ theme }) => theme.index.top + 1};
 
+  grid-area: sidebar;
+
   ${medium()} {
     transform: translateX(-110%);
   }

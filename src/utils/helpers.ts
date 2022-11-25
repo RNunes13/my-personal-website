@@ -6,7 +6,7 @@
 export const getRgbFromHex = (hex = '') => {
   const hexCode = hex.replace('#', '')
 
-  if (hexCode.length !== 6) return hex
+  if (hexCode.length !== 6) return [hex]
 
   const rgbHex = hexCode.match(/.{1,2}/g) as RegExpMatchArray
 

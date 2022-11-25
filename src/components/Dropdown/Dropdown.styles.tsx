@@ -102,7 +102,7 @@ export const List = styled.ul`
   overflow-y: auto;
 `
 
-export const DropdownItem = styled.div``
+export const DropdownItem = styled(DropdownItemComp)``
 
 export const Placeholder = styled.span`
   color: ${({ theme }) => newShade(theme.colors.primary, 90)};

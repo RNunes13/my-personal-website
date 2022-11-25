@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Dropdown } from 'components'
 import type { DropdownItemType } from 'components'
 
+import { useLayoutContext } from 'components/Layout/Layout'
 import { Logo, SectionLinks, ContactLinks } from './parts'
 
 import * as Styled from './Sidebar.styles'
@@ -11,13 +12,10 @@ export interface SidebarLink {
   label: string
 }
 
-interface SidebarProps {
-  isOpen: boolean
-  t: (key: string) => string
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({ t, isOpen }) => {
+export const Sidebar = () => {
   const { locale, push, pathname, asPath } = useRouter()
+
+  const { t, sidebarIsOpen } = useLayoutContext()
 
   const handleLocale = (nextLocale: string) => () =>
     push(pathname, asPath, { locale: nextLocale })
@@ -40,7 +38,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ t, isOpen }) => {
   const activeLanguage = locales.find(({ id }) => id === locale)
 
   return (
-    <Styled.Sidebar isOpen={isOpen}>
+    <Styled.Sidebar isOpen={sidebarIsOpen}>
       <Styled.Container>
         <Logo />
         <SectionLinks t={t} />

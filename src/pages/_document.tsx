@@ -12,9 +12,6 @@ import Document, {
 import createEmotionServer from '@emotion/server/create-instance'
 import createEmotionCache from 'utils/createEmotionCache'
 
-// eslint-disable-next-line no-console
-console.log(`NODE_ENV`, process.env.NODE_ENV)
-
 export default class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext,

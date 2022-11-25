@@ -6,6 +6,9 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    deviceSizes: [576, 768, 992, 1200, 1350],
+  },
   compiler: {
     emotion: true,
   },

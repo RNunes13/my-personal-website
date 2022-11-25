@@ -34,6 +34,7 @@ export const Greeting: React.FC<GreetingProps> = ({ t }) => {
         objectPosition="center"
         src="/images/background.jpg"
         alt="background"
+        priority
       />
 
       <Styled.Container>
@@ -52,10 +53,10 @@ export const Greeting: React.FC<GreetingProps> = ({ t }) => {
         <Styled.ProfileImage>
           <Styled.ImageContainer>
             <Styled.Image
-              height={400}
-              width={400}
+              priority
               src="/images/profile.jpg"
               alt="Rodrigo Nunes"
+              layout="fill"
               onLoad={() => {
                 setTimeout(() => setPhotoLoaded(true), 2000)
               }}

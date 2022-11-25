@@ -19,6 +19,9 @@ const clientSideEmotionCache = createEmotionCache()
 
 export type MyAppProps = AppProps & { emotionCache: EmotionCache }
 
+// eslint-disable-next-line no-console
+console.log(`NODE_ENV`, process.env.NODE_ENV)
+
 const MyApp = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 

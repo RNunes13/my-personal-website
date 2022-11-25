@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import * as Styled from './Greeting.styles'
 
@@ -23,54 +23,47 @@ const getGreetingText = (): string => {
   return 'greeting.fallback'
 }
 
-export const Greeting: React.FC<GreetingProps> = ({ t }) => {
-  const [photoLoaded, setPhotoLoaded] = useState<boolean>(false)
+export const Greeting: React.FC<GreetingProps> = ({ t }) => (
+  <Styled.Section>
+    <Styled.BackgroundImage
+      layout="fill"
+      objectFit="cover"
+      objectPosition="center"
+      src="/images/background.jpg"
+      alt="background"
+      priority
+    />
 
-  return (
-    <Styled.Section>
-      <Styled.BackgroundImage
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        src="/images/background.jpg"
-        alt="background"
-        priority
-      />
+    <Styled.Container>
+      <Styled.Greeting>
+        <Styled.Title>
+          <Styled.TitleText>{t(getGreetingText())}</Styled.TitleText>
+          <Styled.TitleText>{t('greeting.name')}</Styled.TitleText>
+        </Styled.Title>
 
-      <Styled.Container>
-        <Styled.Greeting>
-          <Styled.Title>
-            <Styled.TitleText>{t(getGreetingText())}</Styled.TitleText>
-            <Styled.TitleText>{t('greeting.name')}</Styled.TitleText>
-          </Styled.Title>
+        <Styled.Intro>
+          {t('greeting.grammaticalClass')}
+          <Styled.IntroHighlight>{t('greeting.work')}</Styled.IntroHighlight>
+        </Styled.Intro>
+      </Styled.Greeting>
 
-          <Styled.Intro>
-            {t('greeting.grammaticalClass')}
-            <Styled.IntroHighlight>{t('greeting.work')}</Styled.IntroHighlight>
-          </Styled.Intro>
-        </Styled.Greeting>
-
-        <Styled.ProfileImage>
-          <Styled.ImageContainer>
-            <Styled.Image
-              priority
-              src="/images/profile.jpg"
-              alt="Rodrigo Nunes"
-              layout="fill"
-              onLoad={() => {
-                setTimeout(() => setPhotoLoaded(true), 2000)
-              }}
-            />
-            <Styled.Circles photoLoaded={photoLoaded}>
-              {Array(CIRCLES_NUMBER)
-                .fill(null)
-                .map((_, i) => (
-                  <Styled.Circle key={`circle-${i}`} />
-                ))}
-            </Styled.Circles>
-          </Styled.ImageContainer>
-        </Styled.ProfileImage>
-      </Styled.Container>
-    </Styled.Section>
-  )
-}
+      <Styled.ProfileImage>
+        <Styled.ImageContainer>
+          <Styled.Image
+            priority
+            src="/images/profile.jpg"
+            alt="Rodrigo Nunes"
+            layout="fill"
+          />
+          <Styled.Circles>
+            {Array(CIRCLES_NUMBER)
+              .fill(null)
+              .map((_, i) => (
+                <Styled.Circle key={`circle-${i}`} />
+              ))}
+          </Styled.Circles>
+        </Styled.ImageContainer>
+      </Styled.ProfileImage>
+    </Styled.Container>
+  </Styled.Section>
+)

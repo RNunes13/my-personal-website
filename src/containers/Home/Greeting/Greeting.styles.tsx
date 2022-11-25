@@ -142,7 +142,7 @@ export const Image = styled(NextImage)`
   transition-timing-function: ${({ theme }) => theme.transitions.standard};
 `
 
-export const Circles = styled.div<{ photoLoaded: boolean }>`
+export const Circles = styled.div`
   width: 550px;
   height: 550px;
   border-radius: 100%;
@@ -151,14 +151,7 @@ export const Circles = styled.div<{ photoLoaded: boolean }>`
   right: 0;
   top: 50%;
   transform: translate(-50%, -50%);
-  visibility: hidden;
   z-index: -1;
-
-  ${({ photoLoaded }) =>
-    photoLoaded &&
-    `
-    visibility: visible;
-  `}
 
   ${large()} {
     width: 450px;

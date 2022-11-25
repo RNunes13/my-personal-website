@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import NextImage from 'next/image'
-import NextFutureImage from 'next/future/image'
 import { Container as ContainerComp } from 'components'
 import { large, isMobile, h0, h1, h2, xSmall, h3 } from 'styles/mixins'
 
@@ -134,7 +133,7 @@ export const ImageContainer = styled.figure`
   }
 `
 
-export const Image = styled(NextFutureImage)`
+export const Image = styled(NextImage)`
   width: 100%;
   height: 100%;
   border-radius: 50%;

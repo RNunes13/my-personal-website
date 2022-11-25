@@ -6,7 +6,7 @@ import { Container as ContainerComp, Icon as IcomComp } from 'components'
 export const HEADER_HEIGHT = 60
 
 export const Header = styled.header<{ fill: boolean | null }>`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -19,7 +19,7 @@ export const Header = styled.header<{ fill: boolean | null }>`
   transition-property: transform, background, opacity;
   transition-duration: 250ms;
   transition-timing-function: ${({ theme }) => theme.transitions.standard};
-  z-index: ${({ theme }) => theme.index.top};
+  z-index: ${({ theme }) => theme.index.top - 1};
   grid-area: header;
 
   ${({ theme, fill }) =>

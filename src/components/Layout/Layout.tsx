@@ -8,7 +8,7 @@ import React, {
 
 import { useTranslation } from 'next-i18next'
 
-import { Sidebar, Header, Footer, Container } from 'components'
+import { Sidebar, Header, Footer } from 'components'
 import * as Styled from './Layout.styles'
 
 export interface LayoutProps {
@@ -19,17 +19,15 @@ export interface LayoutProps {
 export interface LayoutContextProps {
   sidebarIsOpen: boolean
   toggleSidebar: () => void
-  t: (key: string, options?: object) => string
 }
 
 export const LayoutContext = createContext<LayoutContextProps>({
   sidebarIsOpen: false,
-  t: () => '',
   toggleSidebar: () => {},
 })
 
-export const Layout: React.FC<LayoutProps> = ({ children, dictionaries }) => {
-  const { t } = useTranslation(dictionaries)
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const { t } = useTranslation('common')
 
   const [sidebarIsOpen, setSidebarIsOpen] = useState<boolean>(false)
 
@@ -39,7 +37,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, dictionaries }) => {
   )
 
   const context: LayoutContextProps = {
-    t,
     sidebarIsOpen,
     toggleSidebar,
   }
@@ -47,12 +44,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, dictionaries }) => {
   return (
     <LayoutContext.Provider value={context}>
       <Styled.Layout>
-        <Sidebar />
+        <Sidebar t={t} />
+        <Styled.Overlay show={sidebarIsOpen} />
         <Header />
-        <Styled.Main>
-          <Container>{children}</Container>
-        </Styled.Main>
-        <Footer />
+        <Styled.Main>{children}</Styled.Main>
+        <Footer t={t} />
       </Styled.Layout>
     </LayoutContext.Provider>
   )

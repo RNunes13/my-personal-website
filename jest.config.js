@@ -12,36 +12,27 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/config/jest.setup.js'],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/dist/',
-    '/docs/',
-    '/stats/'
-  ],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/docs/', '/stats/'],
   testRegex: '/__tests__/.*\\.(test|spec)\\.[jt]sx?$',
   moduleDirectories: ['node_modules', '<rootDir>/'],
   snapshotSerializers: ['@emotion/jest/serializer'],
-  modulePaths: [
-    './src',
-  ],
+  modulePaths: ['./src'],
   moduleNameMapper: {
     '^components(.*)$': '<rootDir>/src/components/$1',
     '^pages(.*)$': '<rootDir>/src/pages/$1',
     '^styles(.*)$': '<rootDir>/src/styles/$1',
     '^utils(.*)$': '<rootDir>/src/utils/$1',
+    '^containers(.*)$': '<rootDir>/src/containers/$1',
   },
   collectCoverageFrom: ['src/**/*.[jt]sx'],
-  coveragePathIgnorePatterns: [
-    '.styles.[jt]sx',
-    'pages'
-  ],
+  coveragePathIgnorePatterns: ['.styles.[jt]sx', 'pages'],
   coverageThreshold: {
     global: {
       branches: 0,
       functions: 0,
       lines: 0,
-      statements: 0
-    }
+      statements: 0,
+    },
   },
 }
 

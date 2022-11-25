@@ -15,20 +15,23 @@ export const Sidebar = styled.aside<{ isOpen: boolean }>`
   color: ${({ theme }) => theme.colors.base_0};
   background-color: ${({ theme }) => theme.colors.primary};
   transition: transform 200ms ${({ theme }) => theme.transitions.standard};
-  z-index: ${({ theme }) => theme.index.top + 1};
-
+  z-index: ${({ theme }) => theme.index.top};
   grid-area: sidebar;
 
   ${medium()} {
+    grid-area: auto;
+
+    ${({ isOpen }) =>
+      !isOpen &&
+      `
     transform: translateX(-110%);
+  `}
   }
 
   ${({ isOpen }) =>
-    !!isOpen &&
+    isOpen &&
     `
-    ${medium()} {
-      transform: translateX(0);
-    }
+    transform: translateX(0);
   `}
 `
 

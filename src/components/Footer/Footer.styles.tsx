@@ -49,6 +49,7 @@ export const Copyright = styled.p`
 
   ${isMobile()} {
     order: 1;
+    text-align: center;
   }
 `
 

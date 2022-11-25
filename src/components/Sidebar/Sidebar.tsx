@@ -12,10 +12,14 @@ export interface SidebarLink {
   label: string
 }
 
-export const Sidebar = () => {
+export interface SidebarProps {
+  t: (key: string, options?: object) => string
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ t }) => {
   const { locale, push, pathname, asPath } = useRouter()
 
-  const { t, sidebarIsOpen } = useLayoutContext()
+  const { sidebarIsOpen } = useLayoutContext()
 
   const handleLocale = (nextLocale: string) => () =>
     push(pathname, asPath, { locale: nextLocale })

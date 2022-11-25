@@ -20,7 +20,7 @@ export const Header = () => {
   }, [onScroll])
 
   return (
-    <Styled.Header fill={fill || null}>
+    <Styled.Header fill={(fill && !sidebarIsOpen) || null}>
       <Styled.Container className="rn-header__container">
         <Link href="/">
           <Styled.Logo
